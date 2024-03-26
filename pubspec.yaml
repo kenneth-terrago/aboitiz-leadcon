@@ -27,7 +27,7 @@ dependencies:
   cloud_firestore: 4.13.1
   cloud_firestore_platform_interface: 6.0.5
   cloud_firestore_web: 3.8.5
-  collection: ^1.18.0
+  collection: ^1.17.2
   csv: 5.0.1
   cupertino_icons: ^1.0.0
   dialog_flowtter: ^0.3.3

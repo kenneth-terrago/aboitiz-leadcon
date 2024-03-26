@@ -1,0 +1,106 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "settings",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "type",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "preregistered_users",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "strategic_business_unit",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "participant_user",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "display_name",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partner_executives",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "partner_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partner_links",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "partner_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "partner_executives",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "agenda_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "id",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "images",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "album_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "video_link_string",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "images",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "album_id",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "image_link_string",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}

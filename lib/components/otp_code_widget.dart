@@ -1,0 +1,85 @@
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'otp_code_model.dart';
+export 'otp_code_model.dart';
+
+class OtpCodeWidget extends StatefulWidget {
+  const OtpCodeWidget({super.key});
+
+  @override
+  State<OtpCodeWidget> createState() => _OtpCodeWidgetState();
+}
+
+class _OtpCodeWidgetState extends State<OtpCodeWidget> {
+  late OtpCodeModel _model;
+
+  @override
+  void setState(VoidCallback callback) {
+    super.setState(callback);
+    _model.onUpdate();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => OtpCodeModel());
+  }
+
+  @override
+  void dispose() {
+    _model.maybeDispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
+    return Padding(
+      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+      child: PinCodeTextField(
+        autoDisposeControllers: false,
+        appContext: context,
+        length: 6,
+        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+              fontFamily: 'Inter',
+              color: FlutterFlowTheme.of(context).secondary,
+            ),
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        enableActiveFill: false,
+        autoFocus: true,
+        enablePinAutofill: true,
+        errorTextSpace: 16.0,
+        showCursor: true,
+        cursorColor: FlutterFlowTheme.of(context).primary,
+        obscureText: false,
+        pinTheme: PinTheme(
+          fieldHeight: 80.0,
+          fieldWidth: 48.0,
+          borderWidth: 2.0,
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(12.0),
+            bottomRight: Radius.circular(12.0),
+            topLeft: Radius.circular(12.0),
+            topRight: Radius.circular(12.0),
+          ),
+          shape: PinCodeFieldShape.underline,
+          activeColor: FlutterFlowTheme.of(context).secondary,
+          inactiveColor: FlutterFlowTheme.of(context).gray200,
+          selectedColor: FlutterFlowTheme.of(context).primary,
+          activeFillColor: FlutterFlowTheme.of(context).secondary,
+          inactiveFillColor: FlutterFlowTheme.of(context).gray200,
+          selectedFillColor: FlutterFlowTheme.of(context).primary,
+        ),
+        controller: _model.pinCodeController,
+        onChanged: (_) {},
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        validator: _model.pinCodeControllerValidator.asValidator(context),
+      ),
+    );
+  }
+}

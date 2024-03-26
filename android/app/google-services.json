@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "56649846092",
+    "project_id": "aboitiz-leadcon-app-66562",
+    "storage_bucket": "aboitiz-leadcon-app-66562.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56649846092:android:f80fb40ca9f678932953e9",
+        "android_client_info": {
+          "package_name": "com.mycompany.aboitizleadconapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2eo74W2OsDxHb_5NmeJvmO7Ng-WM3KNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56649846092:android:3858043926195a3b2953e9",
+        "android_client_info": {
+          "package_name": "com.ubx.leadconaboitizapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2eo74W2OsDxHb_5NmeJvmO7Ng-WM3KNs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

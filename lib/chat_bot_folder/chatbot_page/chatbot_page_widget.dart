@@ -140,6 +140,7 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
         queryParams: QueryParameters(timeZone: "America/Los_Angeles"),
         queryInput: QueryInput(
           text: TextInput(text: text, languageCode: "en"),
+          languageCode: "en",
         ),
       );
 

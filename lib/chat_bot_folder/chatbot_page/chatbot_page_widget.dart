@@ -67,19 +67,22 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
               context.pop();
             },
           ),
-          title: PreferredSize(
-            preferredSize: Size.zero,
-            child: Text(
-              'Elsie',
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Inter',
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    fontSize: 16.0,
-                  ),
-            ),
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "Elsie",
+                style: FlutterFlowTheme.of(context).titleMedium,
+              ),
+              Text(
+                "Your LeadCon Assistant",
+                style: FlutterFlowTheme.of(context).labelMedium,
+              )
+            ],
           ),
-          bottom: const PreferredSize(
-              preferredSize: Size.zero, child: Text("Your LeadCon Assistant")),
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -96,11 +99,14 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
                     Expanded(
                       child: TextField(
                         controller: _controller,
+                        cursorColor: const Color(0xffe12027),
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(50.0),
                           ),
                           filled: true,
+                          contentPadding:
+                              const EdgeInsets.symmetric(horizontal: 20),
                           hintStyle: TextStyle(color: Colors.grey[800]),
                           hintText: "Ask about LeadCon",
                           fillColor: Colors.white70,
@@ -117,7 +123,10 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
                           sendMessage(_controller.text);
                           _controller.clear();
                         },
-                        icon: const Icon(Icons.send))
+                        icon: const Icon(
+                          Icons.send,
+                          color: Color(0xffe12027),
+                        ))
                   ],
                 ),
               )

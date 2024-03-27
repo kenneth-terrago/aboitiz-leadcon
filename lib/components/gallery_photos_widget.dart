@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'gallery_photos_model.dart';
 export 'gallery_photos_model.dart';
 
@@ -41,8 +40,6 @@ class _GalleryPhotosWidgetState extends State<GalleryPhotosWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
       child: Row(

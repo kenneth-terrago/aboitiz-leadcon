@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'filter_bottom_sheet_model.dart';
 export 'filter_bottom_sheet_model.dart';
 
@@ -42,8 +41,6 @@ class _FilterBottomSheetWidgetState extends State<FilterBottomSheetWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(

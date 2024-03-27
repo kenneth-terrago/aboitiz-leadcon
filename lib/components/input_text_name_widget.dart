@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'input_text_name_model.dart';
 export 'input_text_name_model.dart';
 
@@ -47,8 +46,6 @@ class _InputTextNameWidgetState extends State<InputTextNameWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
       child: TextFormField(

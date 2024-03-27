@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'chip_model.dart';
 export 'chip_model.dart';
 
@@ -43,8 +42,6 @@ class _ChipWidgetState extends State<ChipWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       width: 107.0,
       height: 24.0,

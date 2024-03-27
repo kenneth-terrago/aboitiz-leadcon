@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'signin_password_new_model.dart';
 export 'signin_password_new_model.dart';
 
@@ -42,8 +41,6 @@ class _SigninPasswordNewWidgetState extends State<SigninPasswordNewWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -211,8 +208,8 @@ class _SigninPasswordNewWidgetState extends State<SigninPasswordNewWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       RichText(
-                                        textScaleFactor: MediaQuery.of(context)
-                                            .textScaleFactor,
+                                        textScaler:
+                                            MediaQuery.of(context).textScaler,
                                         text: TextSpan(
                                           children: [
                                             TextSpan(

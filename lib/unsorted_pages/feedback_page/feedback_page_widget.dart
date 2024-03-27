@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_web_view.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'feedback_page_model.dart';
 export 'feedback_page_model.dart';
 
@@ -35,8 +34,6 @@ class _FeedbackPageWidgetState extends State<FeedbackPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return StreamBuilder<List<SettingsRecord>>(
       stream: querySettingsRecord(
         queryBuilder: (settingsRecord) => settingsRecord.where(

@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'button_with_icon_model.dart';
 export 'button_with_icon_model.dart';
 
@@ -46,8 +45,6 @@ class _ButtonWithIconWidgetState extends State<ButtonWithIconWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return FFButtonWidget(
       onPressed: () async {
         await widget.onClick?.call();

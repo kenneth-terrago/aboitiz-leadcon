@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'mainfeaturecard_button_model.dart';
 export 'mainfeaturecard_button_model.dart';
 
@@ -48,8 +47,6 @@ class _MainfeaturecardButtonWidgetState
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return FFButtonWidget(
       onPressed: () {
         print('Button pressed ...');

@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'agenda_card_model.dart';
 export 'agenda_card_model.dart';
 
@@ -53,8 +52,6 @@ class _AgendaCardWidgetState extends State<AgendaCardWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Card(
       clipBehavior: Clip.antiAliasWithSaveLayer,
       color: FlutterFlowTheme.of(context).secondaryBackground,

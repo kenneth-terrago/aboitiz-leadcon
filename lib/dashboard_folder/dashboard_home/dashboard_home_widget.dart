@@ -240,10 +240,12 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                                       if ((textAgendaRecord!
                                                                   .startTime! <=
                                                               getCurrentTimestamp) &&
-                                                          (textAgendaRecord.endTime! >=
+                                                          (textAgendaRecord
+                                                                  .endTime! >=
                                                               getCurrentTimestamp)) {
                                                         return 'Now happening';
-                                                      } else if (textAgendaRecord.startTime! >
+                                                      } else if (textAgendaRecord
+                                                              .startTime! >
                                                           getCurrentTimestamp) {
                                                         return 'Upcoming';
                                                       } else {

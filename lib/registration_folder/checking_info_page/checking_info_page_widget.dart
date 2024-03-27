@@ -8,7 +8,6 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'checking_info_page_model.dart';
 export 'checking_info_page_model.dart';
 
@@ -62,8 +61,6 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -997,10 +994,10 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                           ),
                                                           Expanded(
                                                             child: RichText(
-                                                              textScaleFactor:
+                                                              textScaler:
                                                                   MediaQuery.of(
                                                                           context)
-                                                                      .textScaleFactor,
+                                                                      .textScaler,
                                                               text: TextSpan(
                                                                 children: [
                                                                   TextSpan(
@@ -2268,10 +2265,10 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                           ),
                                                           Expanded(
                                                             child: RichText(
-                                                              textScaleFactor:
+                                                              textScaler:
                                                                   MediaQuery.of(
                                                                           context)
-                                                                      .textScaleFactor,
+                                                                      .textScaler,
                                                               text: TextSpan(
                                                                 children: [
                                                                   TextSpan(

@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'starter_kit_card_model.dart';
 export 'starter_kit_card_model.dart';
 
@@ -46,8 +45,6 @@ class _StarterKitCardWidgetState extends State<StarterKitCardWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       height: 90.0,
       decoration: BoxDecoration(

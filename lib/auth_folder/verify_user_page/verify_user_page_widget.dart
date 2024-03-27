@@ -8,7 +8,6 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'verify_user_page_model.dart';
 export 'verify_user_page_model.dart';
 
@@ -45,8 +44,6 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -303,9 +300,9 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                 });
                                               },
                                               child: RichText(
-                                                textScaleFactor:
+                                                textScaler:
                                                     MediaQuery.of(context)
-                                                        .textScaleFactor,
+                                                        .textScaler,
                                                 text: TextSpan(
                                                   children: [
                                                     TextSpan(
@@ -780,9 +777,9 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                 });
                                               },
                                               child: RichText(
-                                                textScaleFactor:
+                                                textScaler:
                                                     MediaQuery.of(context)
-                                                        .textScaleFactor,
+                                                        .textScaler,
                                                 text: TextSpan(
                                                   children: [
                                                     TextSpan(

@@ -2,7 +2,6 @@ import '/components/primary_button2_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'offline_state_model.dart';
 export 'offline_state_model.dart';
 
@@ -37,8 +36,6 @@ class _OfflineStateWidgetState extends State<OfflineStateWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       decoration: const BoxDecoration(),
       child: Stack(

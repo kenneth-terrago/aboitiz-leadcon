@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'search_field2_model.dart';
 export 'search_field2_model.dart';
 
@@ -45,8 +44,6 @@ class _SearchField2WidgetState extends State<SearchField2Widget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return TextFormField(
       controller: _model.textController,
       focusNode: _model.textFieldFocusNode,

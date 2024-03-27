@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'otp_code_model.dart';
 export 'otp_code_model.dart';
 
@@ -37,8 +36,6 @@ class _OtpCodeWidgetState extends State<OtpCodeWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
       child: PinCodeTextField(

@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'primary_button2_lc_model.dart';
 export 'primary_button2_lc_model.dart';
 
@@ -44,8 +43,6 @@ class _PrimaryButton2LcWidgetState extends State<PrimaryButton2LcWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return FFButtonWidget(
       onPressed: () async {
         await widget.buttonAction?.call();

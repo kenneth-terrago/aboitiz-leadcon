@@ -12,7 +12,6 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'otp_code_page_model.dart';
 export 'otp_code_page_model.dart';
 
@@ -69,8 +68,6 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -193,8 +190,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
+                              textScaler: MediaQuery.of(context).textScaler,
                               text: TextSpan(
                                 children: [
                                   TextSpan(
@@ -457,8 +453,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                               ),
                             ),
                             RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
+                              textScaler: MediaQuery.of(context).textScaler,
                               text: TextSpan(
                                 children: [
                                   TextSpan(

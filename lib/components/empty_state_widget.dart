@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'empty_state_model.dart';
 export 'empty_state_model.dart';
 
@@ -36,8 +35,6 @@ class _EmptyStateWidgetState extends State<EmptyStateWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       decoration: const BoxDecoration(),
       child: Stack(

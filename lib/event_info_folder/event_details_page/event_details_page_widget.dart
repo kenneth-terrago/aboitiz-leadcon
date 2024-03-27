@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'event_details_page_model.dart';
 export 'event_details_page_model.dart';
@@ -44,8 +43,6 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -242,9 +239,9 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                                     ?.link !=
                                                 '')
                                               RichText(
-                                                textScaleFactor:
+                                                textScaler:
                                                     MediaQuery.of(context)
-                                                        .textScaleFactor,
+                                                        .textScaler,
                                                 text: TextSpan(
                                                   children: [
                                                     TextSpan(
@@ -330,9 +327,9 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                                         setState(() {}));
                                                   },
                                                   child: RichText(
-                                                    textScaleFactor:
+                                                    textScaler:
                                                         MediaQuery.of(context)
-                                                            .textScaleFactor,
+                                                            .textScaler,
                                                     text: TextSpan(
                                                       children: [
                                                         TextSpan(

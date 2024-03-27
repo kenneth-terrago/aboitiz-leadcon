@@ -1,6 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'gallery_image_model.dart';
 export 'gallery_image_model.dart';
 
@@ -35,8 +34,6 @@ class _GalleryImageWidgetState extends State<GalleryImageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Image.asset(
       'assets/images/ABACgallery.png',
       width: 318.0,

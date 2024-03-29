@@ -148,8 +148,8 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
       DetectIntentResponse response = await dialogFlowtter.detectIntent(
         queryParams: QueryParameters(timeZone: "America/Los_Angeles"),
         queryInput: QueryInput(
-          text: TextInput(text: text, languageCode: "en"),
-          languageCode: "en",
+          text: TextInput(text: text),
+          languageCode: 'en'
         ),
       );
 

@@ -40,13 +40,13 @@ class VerifyUserPageModel extends FlutterFlowModel<VerifyUserPageWidget> {
   UsersRecord? userDocumentBySMS;
   // Stores action output result for [Backend Call - API (Getting the access token)] action in verifyMobileNumberButton widget.
   ApiCallResponse? accessTokenResponseBySMS;
-  // Stores action output result for [Backend Call - API (Send an OTP)] action in verifyMobileNumberButton widget.
+  // Stores action output result for [Backend Call - API (Send SMS OTP)] action in verifyMobileNumberButton widget.
   ApiCallResponse? otpResponseBySMS;
   // Stores action output result for [Firestore Query - Query a collection] action in verifyMobileNumberButton widget.
   PreregisteredUsersRecord? preregisteredUserDocumentBySMS;
   // Stores action output result for [Backend Call - API (Getting the access token)] action in verifyMobileNumberButton widget.
   ApiCallResponse? accessTokenResponseByPreReg;
-  // Stores action output result for [Backend Call - API (Send an OTP)] action in verifyMobileNumberButton widget.
+  // Stores action output result for [Backend Call - API (Send SMS OTP)] action in verifyMobileNumberButton widget.
   ApiCallResponse? otpResponseByPreReg;
   // State field(s) for emailAddressTextfield widget.
   FocusNode? emailAddressTextfieldFocusNode;
@@ -70,13 +70,13 @@ class VerifyUserPageModel extends FlutterFlowModel<VerifyUserPageWidget> {
   UsersRecord? userDocumentByEmail;
   // Stores action output result for [Backend Call - API (Getting the access token)] action in verifyEmailAddressButton widget.
   ApiCallResponse? accessTokenResponseByEmail;
-  // Stores action output result for [Backend Call - API (Send an OTP)] action in verifyEmailAddressButton widget.
+  // Stores action output result for [Backend Call - API (Send Email OTP)] action in verifyEmailAddressButton widget.
   ApiCallResponse? emailOtpResponse;
   // Stores action output result for [Firestore Query - Query a collection] action in verifyEmailAddressButton widget.
   PreregisteredUsersRecord? preUserDocumentByEmail;
   // Stores action output result for [Backend Call - API (Getting the access token)] action in verifyEmailAddressButton widget.
   ApiCallResponse? accessTokenResponseByEmail1;
-  // Stores action output result for [Backend Call - API (Send an OTP)] action in verifyEmailAddressButton widget.
+  // Stores action output result for [Backend Call - API (Send Email OTP)] action in verifyEmailAddressButton widget.
   ApiCallResponse? emailOtpResponse1;
 
   /// Initialization and disposal methods.

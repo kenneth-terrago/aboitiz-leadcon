@@ -19,7 +19,7 @@ class OtpCodePageWidget extends StatefulWidget {
   const OtpCodePageWidget({
     super.key,
     required this.destination,
-    required this.uid,
+    this.uid,
     required this.accessToken,
     required this.isSMSOTP,
     required this.goToPage,
@@ -234,7 +234,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                         );
                                       });
                                       _model.smsOTPResponse =
-                                          await SendAnOTPCall.call(
+                                          await SendSMSOTPCall.call(
                                         destination: widget.destination,
                                         accessToken: GettingTheAccessTokenCall
                                             .accessToken(
@@ -244,13 +244,13 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                         ),
                                       );
                                       shouldSetState = true;
-                                      if (SendAnOTPCall.status(
+                                      if (SendSMSOTPCall.status(
                                             (_model.smsOTPResponse?.jsonBody ??
                                                 ''),
                                           ) ==
                                           200) {
                                         setState(() {
-                                          _model.uid = SendAnOTPCall.uid(
+                                          _model.uid = SendSMSOTPCall.uid(
                                             (_model.smsOTPResponse?.jsonBody ??
                                                 ''),
                                           );
@@ -271,7 +271,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              SendAnOTPCall.message(
+                                              SendSMSOTPCall.message(
                                                 (_model.smsOTPResponse
                                                         ?.jsonBody ??
                                                     ''),
@@ -341,7 +341,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                         );
                                       });
                                       _model.emailOTPResponse =
-                                          await SendAnOTPCall.call(
+                                          await SendSMSOTPCall.call(
                                         destination: widget.destination,
                                         accessToken: GettingTheAccessTokenCall
                                             .accessToken(
@@ -351,14 +351,14 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                         ),
                                       );
                                       shouldSetState = true;
-                                      if (SendAnOTPCall.status(
+                                      if (SendSMSOTPCall.status(
                                             (_model.emailOTPResponse
                                                     ?.jsonBody ??
                                                 ''),
                                           ) ==
                                           200) {
                                         setState(() {
-                                          _model.uid = SendAnOTPCall.uid(
+                                          _model.uid = SendSMSOTPCall.uid(
                                             (_model.emailOTPResponse
                                                     ?.jsonBody ??
                                                 ''),
@@ -380,7 +380,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              SendAnOTPCall.message(
+                                              SendSMSOTPCall.message(
                                                 (_model.emailOTPResponse
                                                         ?.jsonBody ??
                                                     ''),
@@ -534,42 +534,43 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
 
                                 if ((widget.isTestUser == false) ||
                                     (widget.isTestUser == null)) {
-                                  _model.verifySMSOTResponse =
-                                      await VerifyTheSMSOTPCall.call(
-                                    uid: widget.uid,
-                                    code: _model
-                                        .otpCodeLcModel.pinCodeController!.text,
-                                    accessToken: widget.accessToken,
-                                  );
-                                  shouldSetState = true;
-                                  if ((_model.verifySMSOTResponse?.succeeded ??
-                                      true)) {
-                                    if (VerifyTheSMSOTPCall.status(
-                                          (_model.verifySMSOTResponse
-                                                  ?.jsonBody ??
-                                              ''),
-                                        ) ==
-                                        'VERIFIED') {
-                                      if (widget.goToPage == 'signup') {
-                                        context.goNamed(
-                                          'checkingInfoPage',
-                                          queryParameters: {
-                                            'destination': serializeParam(
-                                              widget.destination,
-                                              ParamType.String,
-                                            ),
-                                            'isSMSOTP': serializeParam(
-                                              widget.isSMSOTP,
-                                              ParamType.bool,
-                                            ),
-                                          }.withoutNulls,
-                                        );
+                                  if (widget.isSMSOTP!) {
+                                    _model.verifySMSOTPResponse =
+                                        await VerifyTheSMSOTPCall.call(
+                                      uid: widget.uid,
+                                      code: _model.otpCodeLcModel
+                                          .pinCodeController!.text,
+                                      accessToken: widget.accessToken,
+                                    );
+                                    shouldSetState = true;
+                                    if ((_model
+                                            .verifySMSOTPResponse?.succeeded ??
+                                        true)) {
+                                      if (VerifyTheSMSOTPCall.status(
+                                            (_model.verifySMSOTPResponse
+                                                    ?.jsonBody ??
+                                                ''),
+                                          ) ==
+                                          'VERIFIED') {
+                                        if (widget.goToPage == 'signup') {
+                                          context.goNamed(
+                                            'checkingInfoPage',
+                                            queryParameters: {
+                                              'destination': serializeParam(
+                                                widget.destination,
+                                                ParamType.String,
+                                              ),
+                                              'isSMSOTP': serializeParam(
+                                                widget.isSMSOTP,
+                                                ParamType.bool,
+                                              ),
+                                            }.withoutNulls,
+                                          );
 
-                                        if (shouldSetState) setState(() {});
-                                        return;
-                                      } else {
-                                        if (widget.goToPage == 'dashboard') {
-                                          if (widget.isSMSOTP!) {
+                                          if (shouldSetState) setState(() {});
+                                          return;
+                                        } else {
+                                          if (widget.goToPage == 'dashboard') {
                                             _model.queryResponsUserDocumentBySMS =
                                                 await queryUsersRecordOnce(
                                               queryBuilder: (usersRecord) =>
@@ -596,32 +597,129 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                             }
                                             return;
                                           } else {
-                                            _model.queryResponseUserDocumentByEmail =
-                                                await queryUsersRecordOnce(
-                                              queryBuilder: (usersRecord) =>
-                                                  usersRecord.where(
-                                                'work_email',
-                                                isEqualTo: widget.destination,
-                                              ),
-                                              singleRecord: true,
-                                            ).then((s) => s.firstOrNull);
-                                            shouldSetState = true;
-                                            setState(() {
-                                              FFAppState().isAuthenticated =
-                                                  true;
-                                              FFAppState().authenticatedUser =
-                                                  _model
-                                                      .queryResponseUserDocumentByEmail
-                                                      ?.reference;
-                                            });
-
-                                            context.goNamed('dashboardHome');
-
                                             if (shouldSetState) {
                                               setState(() {});
                                             }
                                             return;
                                           }
+                                        }
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              VerifyTheSMSOTPCall.message(
+                                                (_model.verifySMSOTPResponse
+                                                        ?.jsonBody ??
+                                                    ''),
+                                              ).toString(),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyLargeFamily,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
+                                                      ),
+                                            ),
+                                            duration:
+                                                const Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .error,
+                                          ),
+                                        );
+                                        if (shouldSetState) setState(() {});
+                                        return;
+                                      }
+                                    } else {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            VerifyTheSMSOTPCall.message(
+                                              (_model.verifySMSOTPResponse
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            ).toString(),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLargeFamily,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryBackground,
+                                                ),
+                                          ),
+                                          duration:
+                                              const Duration(milliseconds: 4000),
+                                          backgroundColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .error,
+                                        ),
+                                      );
+                                      if (shouldSetState) setState(() {});
+                                      return;
+                                    }
+                                  } else {
+                                    _model.verifyEmailOTPResponse =
+                                        await VerifyEmailOTPCall.call(
+                                      accessToken: widget.accessToken,
+                                      otp: _model.otpCodeLcModel
+                                          .pinCodeController!.text,
+                                      destination: widget.destination,
+                                    );
+                                    shouldSetState = true;
+                                    if ((_model.verifyEmailOTPResponse
+                                            ?.succeeded ??
+                                        true)) {
+                                      if (widget.goToPage == 'signup') {
+                                        context.goNamed(
+                                          'checkingInfoPage',
+                                          queryParameters: {
+                                            'destination': serializeParam(
+                                              widget.destination,
+                                              ParamType.String,
+                                            ),
+                                            'isSMSOTP': serializeParam(
+                                              widget.isSMSOTP,
+                                              ParamType.bool,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+
+                                        if (shouldSetState) setState(() {});
+                                        return;
+                                      } else {
+                                        if (widget.goToPage == 'dashboard') {
+                                          _model.queryResponseUserDocumentByEmail =
+                                              await queryUsersRecordOnce(
+                                            queryBuilder: (usersRecord) =>
+                                                usersRecord.where(
+                                              'work_email',
+                                              isEqualTo: widget.destination,
+                                            ),
+                                            singleRecord: true,
+                                          ).then((s) => s.firstOrNull);
+                                          shouldSetState = true;
+                                          setState(() {
+                                            FFAppState().isAuthenticated = true;
+                                            FFAppState().authenticatedUser = _model
+                                                .queryResponseUserDocumentByEmail
+                                                ?.reference;
+                                          });
+
+                                          context.goNamed('dashboardHome');
+
+                                          if (shouldSetState) setState(() {});
+                                          return;
                                         } else {
                                           if (shouldSetState) setState(() {});
                                           return;
@@ -632,51 +730,33 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                           .showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                            'it looks like you entered the wrong OTP code. Please enter the correct OTP code.',
+                                            VerifyEmailOTPCall.message(
+                                              (_model.verifyEmailOTPResponse
+                                                      ?.jsonBody ??
+                                                  ''),
+                                            ).toString(),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
+                                                .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLargeFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
+                                                      .primaryBackground,
                                                 ),
                                           ),
                                           duration:
                                               const Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
-                                                  .warning,
+                                                  .error,
                                         ),
                                       );
                                       if (shouldSetState) setState(() {});
                                       return;
                                     }
-                                  } else {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                          VerifyTheSMSOTPCall.message(
-                                            (_model.verifySMSOTResponse
-                                                    ?.jsonBody ??
-                                                ''),
-                                          ).toString(),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                        ),
-                                        duration: const Duration(milliseconds: 4000),
-                                        backgroundColor:
-                                            FlutterFlowTheme.of(context).error,
-                                      ),
-                                    );
-                                    if (shouldSetState) setState(() {});
-                                    return;
                                   }
                                 } else {
                                   if (widget.goToPage == 'signup') {

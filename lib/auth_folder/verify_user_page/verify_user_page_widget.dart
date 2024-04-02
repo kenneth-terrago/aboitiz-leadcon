@@ -339,7 +339,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
-                                                        fontSize: 18.0,
+                                                        fontSize: 14.0,
                                                       ),
                                                 ),
                                                 textAlign: TextAlign.center,
@@ -382,7 +382,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                             );
                                             shouldSetState = true;
                                             _model.otpResponseBySMS =
-                                                await SendAnOTPCall.call(
+                                                await SendSMSOTPCall.call(
                                               destination:
                                                   '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
                                               accessToken:
@@ -394,7 +394,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               ),
                                             );
                                             shouldSetState = true;
-                                            if (SendAnOTPCall.status(
+                                            if (SendSMSOTPCall.status(
                                                   (_model.otpResponseBySMS
                                                           ?.jsonBody ??
                                                       ''),
@@ -408,7 +408,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     ParamType.String,
                                                   ),
                                                   'uid': serializeParam(
-                                                    SendAnOTPCall.uid(
+                                                    SendSMSOTPCall.uid(
                                                       (_model.otpResponseBySMS
                                                               ?.jsonBody ??
                                                           ''),
@@ -444,16 +444,19 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    SendAnOTPCall.message(
+                                                    SendSMSOTPCall.message(
                                                       (_model.otpResponseBySMS
                                                               ?.jsonBody ??
                                                           ''),
                                                     )!,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
@@ -497,7 +500,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               );
                                               shouldSetState = true;
                                               _model.otpResponseByPreReg =
-                                                  await SendAnOTPCall.call(
+                                                  await SendSMSOTPCall.call(
                                                 destination:
                                                     '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
                                                 accessToken:
@@ -509,7 +512,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                 ),
                                               );
                                               shouldSetState = true;
-                                              if (SendAnOTPCall.status(
+                                              if (SendSMSOTPCall.status(
                                                     (_model.otpResponseByPreReg
                                                             ?.jsonBody ??
                                                         ''),
@@ -524,7 +527,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       ParamType.String,
                                                     ),
                                                     'uid': serializeParam(
-                                                      SendAnOTPCall.uid(
+                                                      SendSMSOTPCall.uid(
                                                         (_model.otpResponseByPreReg
                                                                 ?.jsonBody ??
                                                             ''),
@@ -563,7 +566,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     .showSnackBar(
                                                   SnackBar(
                                                     content: Text(
-                                                      SendAnOTPCall.message(
+                                                      SendSMSOTPCall.message(
                                                         (_model.otpResponseBySMS
                                                                 ?.jsonBody ??
                                                             ''),
@@ -571,10 +574,11 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium
+                                                              .bodyLarge
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
@@ -602,12 +606,15 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     'The phone number entered is not yet registered. Please contact your admin.',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryBackground,
+                                                              .primaryBackground,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -856,10 +863,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                             );
                                             shouldSetState = true;
                                             _model.emailOtpResponse =
-                                                await SendAnOTPCall.call(
-                                              destination: _model
-                                                  .emailAddressTextfieldController
-                                                  .text,
+                                                await SendEmailOTPCall.call(
                                               accessToken:
                                                   GettingTheAccessTokenCall
                                                       .accessToken(
@@ -867,14 +871,14 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                         ?.jsonBody ??
                                                     ''),
                                               ),
+                                              destination: _model
+                                                  .emailAddressTextfieldController
+                                                  .text,
                                             );
                                             shouldSetState = true;
-                                            if (SendAnOTPCall.status(
-                                                  (_model.emailOtpResponse
-                                                          ?.jsonBody ??
-                                                      ''),
-                                                ) ==
-                                                200) {
+                                            if ((_model.emailOtpResponse
+                                                    ?.succeeded ??
+                                                true)) {
                                               context.pushNamed(
                                                 'otpCodePage',
                                                 queryParameters: {
@@ -882,14 +886,6 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     _model
                                                         .emailAddressTextfieldController
                                                         .text,
-                                                    ParamType.String,
-                                                  ),
-                                                  'uid': serializeParam(
-                                                    SendAnOTPCall.uid(
-                                                      (_model.emailOtpResponse
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                    ),
                                                     ParamType.String,
                                                   ),
                                                   'accessToken': serializeParam(
@@ -906,7 +902,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     ParamType.bool,
                                                   ),
                                                   'goToPage': serializeParam(
-                                                    'signup',
+                                                    'dashboard',
                                                     ParamType.String,
                                                   ),
                                                   'isTestUser': serializeParam(
@@ -921,13 +917,23 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    'Something went wrong',
-                                                    style: TextStyle(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                    ),
+                                                    SendEmailOTPCall.message(
+                                                      (_model.emailOtpResponse
+                                                              ?.jsonBody ??
+                                                          ''),
+                                                    )!,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                        ),
                                                   ),
                                                   duration: const Duration(
                                                       milliseconds: 4000),
@@ -967,38 +973,28 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               );
                                               shouldSetState = true;
                                               _model.emailOtpResponse1 =
-                                                  await SendAnOTPCall.call(
-                                                destination:
-                                                    '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
+                                                  await SendEmailOTPCall.call(
                                                 accessToken:
                                                     GettingTheAccessTokenCall
                                                         .accessToken(
-                                                  (_model.accessTokenResponseBySMS
+                                                  (_model.accessTokenResponseByEmail1
                                                           ?.jsonBody ??
                                                       ''),
                                                 ),
+                                                destination: _model
+                                                    .emailAddressTextfieldController
+                                                    .text,
                                               );
                                               shouldSetState = true;
-                                              if (SendAnOTPCall.status(
-                                                    (_model.otpResponseBySMS
-                                                            ?.jsonBody ??
-                                                        ''),
-                                                  ) ==
-                                                  200) {
+                                              if ((_model.emailOtpResponse1
+                                                      ?.succeeded ??
+                                                  true)) {
                                                 context.pushNamed(
                                                   'otpCodePage',
                                                   queryParameters: {
                                                     'destination':
                                                         serializeParam(
                                                       '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
-                                                      ParamType.String,
-                                                    ),
-                                                    'uid': serializeParam(
-                                                      SendAnOTPCall.uid(
-                                                        (_model.otpResponseBySMS
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                      ),
                                                       ParamType.String,
                                                     ),
                                                     'accessToken':
@@ -1016,7 +1012,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       ParamType.bool,
                                                     ),
                                                     'goToPage': serializeParam(
-                                                      'dashboard',
+                                                      'signup',
                                                       ParamType.String,
                                                     ),
                                                     'isTestUser':
@@ -1033,21 +1029,22 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     .showSnackBar(
                                                   SnackBar(
                                                     content: Text(
-                                                      SendAnOTPCall.message(
-                                                        (_model.otpResponseBySMS
+                                                      SendEmailOTPCall.message(
+                                                        (_model.emailOtpResponse1
                                                                 ?.jsonBody ??
                                                             ''),
                                                       )!,
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium
+                                                              .bodyLarge
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .primaryBackground,
                                                               ),
                                                     ),
                                                     duration: const Duration(
@@ -1069,15 +1066,18 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    'The phone number entered is not yet registered. Please contact your admin.',
+                                                    'The email address entered is not yet registered. Please contact your admin.',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryBackground,
+                                                              .primaryBackground,
                                                         ),
                                                   ),
                                                   duration: const Duration(

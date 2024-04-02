@@ -24,11 +24,11 @@ class OtpCodePageModel extends FlutterFlowModel<OtpCodePageWidget> {
   late OtpCodeLcModel otpCodeLcModel;
   // Stores action output result for [Backend Call - API (Getting the access token)] action in Text widget.
   ApiCallResponse? accessTokenResponseSMS;
-  // Stores action output result for [Backend Call - API (Send an OTP)] action in Text widget.
+  // Stores action output result for [Backend Call - API (Send SMS OTP)] action in Text widget.
   ApiCallResponse? smsOTPResponse;
   // Stores action output result for [Backend Call - API (Getting the access token)] action in Text widget.
   ApiCallResponse? accessTokenResponseEmail;
-  // Stores action output result for [Backend Call - API (Send an OTP)] action in Text widget.
+  // Stores action output result for [Backend Call - API (Send SMS OTP)] action in Text widget.
   ApiCallResponse? emailOTPResponse;
   // State field(s) for Timer widget.
   int timerMilliseconds = 120000;
@@ -43,9 +43,11 @@ class OtpCodePageModel extends FlutterFlowModel<OtpCodePageWidget> {
   // Stores action output result for [Custom Action - getStringLength] action in Button widget.
   int? textLength;
   // Stores action output result for [Backend Call - API (Verify the SMS OTP)] action in Button widget.
-  ApiCallResponse? verifySMSOTResponse;
+  ApiCallResponse? verifySMSOTPResponse;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   UsersRecord? queryResponsUserDocumentBySMS;
+  // Stores action output result for [Backend Call - API (Verify Email OTP)] action in Button widget.
+  ApiCallResponse? verifyEmailOTPResponse;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   UsersRecord? queryResponseUserDocumentByEmail;
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.

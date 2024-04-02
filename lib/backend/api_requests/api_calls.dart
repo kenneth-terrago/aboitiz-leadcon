@@ -7,7 +7,7 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-class SendAnOTPCall {
+class SendSMSOTPCall {
   static Future<ApiCallResponse> call({
     String? destination = '',
     String? accessToken = '',
@@ -19,7 +19,7 @@ class SendAnOTPCall {
   "codeLength": 6
 }''';
     return ApiManager.instance.makeApiCall(
-      callName: 'Send an OTP',
+      callName: 'Send SMS OTP',
       apiUrl: 'https://sandbox-dev.shared.ubx.ph/v1/sms/otp',
       callType: ApiCallType.POST,
       headers: {
@@ -130,6 +130,88 @@ class VerifyTheSMSOTPCall {
         response,
         r'''$.message.status''',
       ));
+  static dynamic message(dynamic response) => getJsonField(
+        response,
+        r'''$.message''',
+      );
+}
+
+class SendEmailOTPCall {
+  static Future<ApiCallResponse> call({
+    String? accessToken = '',
+    String? destination = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "template": "LEADCON_DEV",
+  "emailAddress": "$destination",
+  "sameOtp": false
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Send Email OTP',
+      apiUrl: 'https://sandbox-dev.shared.ubx.ph/v1/email/otp/LEADCON',
+      callType: ApiCallType.POST,
+      headers: {
+        'x-api-key': 'anVp3MBPW&29NHgP#ddS9',
+        'AuthorizationToken': '$accessToken',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static int? status(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.status''',
+      ));
+  static String? message(dynamic response) => castToType<String>(getJsonField(
+        response,
+        r'''$.message''',
+      ));
+}
+
+class VerifyEmailOTPCall {
+  static Future<ApiCallResponse> call({
+    String? accessToken = '',
+    String? otp = '',
+    String? destination = '',
+  }) async {
+    final ffApiRequestBody = '''
+{
+  "otp": "$otp",
+  "emailAddress": "$destination"
+}''';
+    return ApiManager.instance.makeApiCall(
+      callName: 'Verify Email OTP',
+      apiUrl: 'https://sandbox-dev.shared.ubx.ph/v1/email/otp/LEADCON',
+      callType: ApiCallType.PATCH,
+      headers: {
+        'x-api-key': 'anVp3MBPW&29NHgP#ddS9',
+        'AuthorizationToken': '$accessToken',
+        'Content-Type': 'application/json',
+      },
+      params: {},
+      body: ffApiRequestBody,
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+      alwaysAllowBody: false,
+    );
+  }
+
+  static dynamic status(dynamic response) => getJsonField(
+        response,
+        r'''$.status''',
+      );
   static dynamic message(dynamic response) => getJsonField(
         response,
         r'''$.message''',

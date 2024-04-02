@@ -1,3 +1,9 @@
 # ignore following files
 /android/app/upload-keystore.jks
 /assets/dialog_flow_auth.json
+/.dart_tool
+.flutter-plugins
+.flutter-plugins-dependencies
+/build
+ios/Podfile.lock
+pubspec.lock

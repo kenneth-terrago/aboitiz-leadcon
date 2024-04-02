@@ -615,13 +615,15 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                               ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
+                                                        fontFamily:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .primaryText,
+                                                                .bodyLargeFamily,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                       ),
                                             ),
                                             duration:
@@ -645,12 +647,15 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                   ''),
                                             ).toString(),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
+                                                .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLargeFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
+                                                      .primaryBackground,
                                                 ),
                                           ),
                                           duration:
@@ -731,12 +736,15 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                   ''),
                                             ).toString(),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
+                                                .bodyLarge
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  fontFamily:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyLargeFamily,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryText,
+                                                      .primaryBackground,
                                                 ),
                                           ),
                                           duration:

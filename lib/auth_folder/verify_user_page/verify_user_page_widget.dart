@@ -339,7 +339,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
-                                                        fontSize: 18.0,
+                                                        fontSize: 14.0,
                                                       ),
                                                 ),
                                                 textAlign: TextAlign.center,
@@ -451,9 +451,12 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     )!,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
@@ -571,10 +574,11 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium
+                                                              .bodyLarge
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
@@ -602,12 +606,15 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     'The phone number entered is not yet registered. Please contact your admin.',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryBackground,
+                                                              .primaryBackground,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -869,12 +876,9 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .text,
                                             );
                                             shouldSetState = true;
-                                            if (SendEmailOTPCall.status(
-                                                  (_model.emailOtpResponse
-                                                          ?.jsonBody ??
-                                                      ''),
-                                                ) ==
-                                                200) {
+                                            if ((_model.emailOtpResponse
+                                                    ?.succeeded ??
+                                                true)) {
                                               context.pushNamed(
                                                 'otpCodePage',
                                                 queryParameters: {
@@ -913,13 +917,23 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    'Something went wrong',
-                                                    style: TextStyle(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                    ),
+                                                    SendEmailOTPCall.message(
+                                                      (_model.emailOtpResponse
+                                                              ?.jsonBody ??
+                                                          ''),
+                                                    )!,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                        ),
                                                   ),
                                                   duration: const Duration(
                                                       milliseconds: 4000),
@@ -972,12 +986,9 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     .text,
                                               );
                                               shouldSetState = true;
-                                              if (SendSMSOTPCall.status(
-                                                    (_model.otpResponseBySMS
-                                                            ?.jsonBody ??
-                                                        ''),
-                                                  ) ==
-                                                  200) {
+                                              if ((_model.emailOtpResponse1
+                                                      ?.succeeded ??
+                                                  true)) {
                                                 context.pushNamed(
                                                   'otpCodePage',
                                                   queryParameters: {
@@ -1018,21 +1029,22 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     .showSnackBar(
                                                   SnackBar(
                                                     content: Text(
-                                                      SendSMSOTPCall.message(
-                                                        (_model.otpResponseBySMS
+                                                      SendEmailOTPCall.message(
+                                                        (_model.emailOtpResponse1
                                                                 ?.jsonBody ??
                                                             ''),
                                                       )!,
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium
+                                                              .bodyLarge
                                                               .override(
-                                                                fontFamily:
-                                                                    'Inter',
+                                                                fontFamily: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLargeFamily,
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .primaryBackground,
                                                               ),
                                                     ),
                                                     duration: const Duration(
@@ -1057,12 +1069,15 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     'The email address entered is not yet registered. Please contact your admin.',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium
+                                                        .bodyLarge
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          fontFamily:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLargeFamily,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryBackground,
+                                                              .primaryBackground,
                                                         ),
                                                   ),
                                                   duration: const Duration(

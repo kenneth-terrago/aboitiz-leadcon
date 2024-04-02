@@ -898,7 +898,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     ParamType.bool,
                                                   ),
                                                   'goToPage': serializeParam(
-                                                    'signup',
+                                                    'dashboard',
                                                     ParamType.String,
                                                   ),
                                                   'isTestUser': serializeParam(
@@ -1001,7 +1001,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       ParamType.bool,
                                                     ),
                                                     'goToPage': serializeParam(
-                                                      'dashboard',
+                                                      'signup',
                                                       ParamType.String,
                                                     ),
                                                     'isTestUser':
@@ -1054,7 +1054,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    'The phone number entered is not yet registered. Please contact your admin.',
+                                                    'The email address entered is not yet registered. Please contact your admin.',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium

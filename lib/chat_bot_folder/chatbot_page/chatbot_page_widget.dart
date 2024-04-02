@@ -26,6 +26,18 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  final _scrollController = ScrollController();
+
+  // scrolling with animation
+  void _scrollDown() {
+    debugPrint('# scroll: ${_scrollController.position.maxScrollExtent}');
+    _scrollController.animateTo(
+      0.0,
+      duration: const Duration(microseconds: 1000),
+      curve: Curves.fastOutSlowIn,
+    );
+  }
+
   @override
   void initState() {
     DialogFlowtter.fromFile(sessionId: const Uuid().v1())
@@ -90,7 +102,11 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
           top: true,
           child: Column(
             children: [
-              Expanded(child: MessagesScreen(messages: messages)),
+              Expanded(
+                  child: MessagesScreen(
+                messages: messages,
+                scrollController: _scrollController,
+              )),
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
@@ -147,13 +163,12 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
 
       DetectIntentResponse response = await dialogFlowtter.detectIntent(
         queryParams: QueryParameters(timeZone: "America/Los_Angeles"),
-        queryInput: QueryInput(
-          text: TextInput(text: text),
-          languageCode: 'en'
-        ),
+        queryInput: QueryInput(text: TextInput(text: text), languageCode: 'en'),
       );
 
       if (response.message == null) return;
+
+      await Future.delayed(const Duration(seconds: 1));
       setState(() {
         addMessage(response.message!);
       });
@@ -161,6 +176,7 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
   }
 
   addMessage(Message message, [bool isUserMessage = false]) {
-    messages.add({'message': message, 'isUserMessage': isUserMessage});
+    messages.insert(0, {'message': message, 'isUserMessage': isUserMessage});
+    _scrollDown();
   }
 }

@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class MessagesScreen extends StatefulWidget {
   final List messages;
-  const MessagesScreen({super.key, required this.messages});
+  final ScrollController scrollController;
+  const MessagesScreen({
+    super.key,
+    required this.messages,
+    required this.scrollController,
+  });
 
   @override
   State<MessagesScreen> createState() => _MessagesScreenState();
@@ -13,6 +18,9 @@ class _MessagesScreenState extends State<MessagesScreen> {
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
     return ListView.separated(
+        controller: widget.scrollController,
+        shrinkWrap: true,
+        reverse: true,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.all(10),
@@ -43,7 +51,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   child: Text(
                     widget.messages[index]['message'].text.text[0],
                     style: TextStyle(
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w400,
                       color: widget.messages[index]['isUserMessage']
                           ? Colors.white
                           : Colors.black87,

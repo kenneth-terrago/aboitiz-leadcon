@@ -382,7 +382,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                             );
                                             shouldSetState = true;
                                             _model.otpResponseBySMS =
-                                                await SendAnOTPCall.call(
+                                                await SendSMSOTPCall.call(
                                               destination:
                                                   '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
                                               accessToken:
@@ -394,7 +394,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               ),
                                             );
                                             shouldSetState = true;
-                                            if (SendAnOTPCall.status(
+                                            if (SendSMSOTPCall.status(
                                                   (_model.otpResponseBySMS
                                                           ?.jsonBody ??
                                                       ''),
@@ -408,7 +408,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     ParamType.String,
                                                   ),
                                                   'uid': serializeParam(
-                                                    SendAnOTPCall.uid(
+                                                    SendSMSOTPCall.uid(
                                                       (_model.otpResponseBySMS
                                                               ?.jsonBody ??
                                                           ''),
@@ -444,7 +444,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .showSnackBar(
                                                 SnackBar(
                                                   content: Text(
-                                                    SendAnOTPCall.message(
+                                                    SendSMSOTPCall.message(
                                                       (_model.otpResponseBySMS
                                                               ?.jsonBody ??
                                                           ''),
@@ -497,7 +497,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               );
                                               shouldSetState = true;
                                               _model.otpResponseByPreReg =
-                                                  await SendAnOTPCall.call(
+                                                  await SendSMSOTPCall.call(
                                                 destination:
                                                     '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
                                                 accessToken:
@@ -509,7 +509,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                 ),
                                               );
                                               shouldSetState = true;
-                                              if (SendAnOTPCall.status(
+                                              if (SendSMSOTPCall.status(
                                                     (_model.otpResponseByPreReg
                                                             ?.jsonBody ??
                                                         ''),
@@ -524,7 +524,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       ParamType.String,
                                                     ),
                                                     'uid': serializeParam(
-                                                      SendAnOTPCall.uid(
+                                                      SendSMSOTPCall.uid(
                                                         (_model.otpResponseByPreReg
                                                                 ?.jsonBody ??
                                                             ''),
@@ -563,7 +563,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     .showSnackBar(
                                                   SnackBar(
                                                     content: Text(
-                                                      SendAnOTPCall.message(
+                                                      SendSMSOTPCall.message(
                                                         (_model.otpResponseBySMS
                                                                 ?.jsonBody ??
                                                             ''),
@@ -856,10 +856,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                             );
                                             shouldSetState = true;
                                             _model.emailOtpResponse =
-                                                await SendAnOTPCall.call(
-                                              destination: _model
-                                                  .emailAddressTextfieldController
-                                                  .text,
+                                                await SendEmailOTPCall.call(
                                               accessToken:
                                                   GettingTheAccessTokenCall
                                                       .accessToken(
@@ -867,9 +864,12 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                         ?.jsonBody ??
                                                     ''),
                                               ),
+                                              destination: _model
+                                                  .emailAddressTextfieldController
+                                                  .text,
                                             );
                                             shouldSetState = true;
-                                            if (SendAnOTPCall.status(
+                                            if (SendEmailOTPCall.status(
                                                   (_model.emailOtpResponse
                                                           ?.jsonBody ??
                                                       ''),
@@ -882,14 +882,6 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     _model
                                                         .emailAddressTextfieldController
                                                         .text,
-                                                    ParamType.String,
-                                                  ),
-                                                  'uid': serializeParam(
-                                                    SendAnOTPCall.uid(
-                                                      (_model.emailOtpResponse
-                                                              ?.jsonBody ??
-                                                          ''),
-                                                    ),
                                                     ParamType.String,
                                                   ),
                                                   'accessToken': serializeParam(
@@ -967,19 +959,20 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               );
                                               shouldSetState = true;
                                               _model.emailOtpResponse1 =
-                                                  await SendAnOTPCall.call(
-                                                destination:
-                                                    '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
+                                                  await SendEmailOTPCall.call(
                                                 accessToken:
                                                     GettingTheAccessTokenCall
                                                         .accessToken(
-                                                  (_model.accessTokenResponseBySMS
+                                                  (_model.accessTokenResponseByEmail1
                                                           ?.jsonBody ??
                                                       ''),
                                                 ),
+                                                destination: _model
+                                                    .emailAddressTextfieldController
+                                                    .text,
                                               );
                                               shouldSetState = true;
-                                              if (SendAnOTPCall.status(
+                                              if (SendSMSOTPCall.status(
                                                     (_model.otpResponseBySMS
                                                             ?.jsonBody ??
                                                         ''),
@@ -991,14 +984,6 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     'destination':
                                                         serializeParam(
                                                       '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
-                                                      ParamType.String,
-                                                    ),
-                                                    'uid': serializeParam(
-                                                      SendAnOTPCall.uid(
-                                                        (_model.otpResponseBySMS
-                                                                ?.jsonBody ??
-                                                            ''),
-                                                      ),
                                                       ParamType.String,
                                                     ),
                                                     'accessToken':
@@ -1033,7 +1018,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     .showSnackBar(
                                                   SnackBar(
                                                     content: Text(
-                                                      SendAnOTPCall.message(
+                                                      SendSMSOTPCall.message(
                                                         (_model.otpResponseBySMS
                                                                 ?.jsonBody ??
                                                             ''),

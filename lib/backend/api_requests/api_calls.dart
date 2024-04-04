@@ -208,14 +208,18 @@ class VerifyEmailOTPCall {
     );
   }
 
-  static dynamic status(dynamic response) => getJsonField(
+  static int? status(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.status''',
-      );
-  static dynamic message(dynamic response) => getJsonField(
+      ));
+  static String? message(dynamic response) => castToType<String>(getJsonField(
         response,
         r'''$.message''',
-      );
+      ));
+  static int? code(dynamic response) => castToType<int>(getJsonField(
+        response,
+        r'''$.code''',
+      ));
 }
 
 class ApiPagingParams {

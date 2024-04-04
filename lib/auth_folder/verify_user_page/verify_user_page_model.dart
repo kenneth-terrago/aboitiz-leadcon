@@ -63,6 +63,9 @@ class VerifyUserPageModel extends FlutterFlowModel<VerifyUserPageWidget> {
       return ' Please enter valid phone number';
     }
 
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'Please enter valid phone number';
+    }
     return null;
   }
 

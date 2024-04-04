@@ -876,9 +876,12 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .text,
                                             );
                                             shouldSetState = true;
-                                            if ((_model.emailOtpResponse
-                                                    ?.succeeded ??
-                                                true)) {
+                                            if (SendEmailOTPCall.status(
+                                                  (_model.emailOtpResponse
+                                                          ?.jsonBody ??
+                                                      ''),
+                                                ) ==
+                                                200) {
                                               context.pushNamed(
                                                 'otpCodePage',
                                                 queryParameters: {
@@ -909,6 +912,10 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     _model.userDocumentByEmail
                                                         ?.testUser,
                                                     ParamType.bool,
+                                                  ),
+                                                  'uid': serializeParam(
+                                                    null,
+                                                    ParamType.String,
                                                   ),
                                                 }.withoutNulls,
                                               );
@@ -986,22 +993,27 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     .text,
                                               );
                                               shouldSetState = true;
-                                              if ((_model.emailOtpResponse1
-                                                      ?.succeeded ??
-                                                  true)) {
+                                              if (SendEmailOTPCall.status(
+                                                    (_model.emailOtpResponse1
+                                                            ?.jsonBody ??
+                                                        ''),
+                                                  ) ==
+                                                  200) {
                                                 context.pushNamed(
                                                   'otpCodePage',
                                                   queryParameters: {
                                                     'destination':
                                                         serializeParam(
-                                                      '${_model.countryCodeDropdownValue}${_model.mobileNumberTextfieldController.text}',
+                                                      _model
+                                                          .emailAddressTextfieldController
+                                                          .text,
                                                       ParamType.String,
                                                     ),
                                                     'accessToken':
                                                         serializeParam(
                                                       GettingTheAccessTokenCall
                                                           .accessToken(
-                                                        (_model.accessTokenResponseBySMS
+                                                        (_model.accessTokenResponseByEmail1
                                                                 ?.jsonBody ??
                                                             ''),
                                                       ),
@@ -1021,6 +1033,10 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           .preUserDocumentByEmail
                                                           ?.testUser,
                                                       ParamType.bool,
+                                                    ),
+                                                    'uid': serializeParam(
+                                                      null,
+                                                      ParamType.String,
                                                     ),
                                                   }.withoutNulls,
                                                 );

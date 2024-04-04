@@ -734,7 +734,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                               (_model.verifyEmailOTPResponse
                                                       ?.jsonBody ??
                                                   ''),
-                                            ).toString(),
+                                            )!,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(

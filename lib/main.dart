@@ -21,6 +21,7 @@ void main() async {
   if (!kIsWeb) {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
   }
+  await initializeFirebaseRemoteConfig();
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,

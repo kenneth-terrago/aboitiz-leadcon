@@ -35,21 +35,21 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
     super.initState();
     _model = createModel(context, () => CheckingInfoPageModel());
 
-    _model.fullNameTextFieldFocusNode1 ??= FocusNode();
+    _model.fullNameTextFieldSMSFocusNode ??= FocusNode();
 
-    _model.mobileNumberTextFieldFocusNode1 ??= FocusNode();
+    _model.mobileNumberTextFieldSMSFocusNode ??= FocusNode();
 
-    _model.workEmailTextFieldFocusNode1 ??= FocusNode();
+    _model.workEmailTextFieldSMSFocusNode ??= FocusNode();
 
-    _model.positionTitleTextFieldFocusNode1 ??= FocusNode();
+    _model.positionTitleTextFieldSMSFocusNode ??= FocusNode();
 
-    _model.fullNameTextFieldFocusNode2 ??= FocusNode();
+    _model.fullNameTextFieldEmailFocusNode ??= FocusNode();
 
-    _model.mobileNumberTextFieldFocusNode2 ??= FocusNode();
+    _model.mobileNumberTextFieldEmailFocusNode ??= FocusNode();
 
-    _model.workEmailTextFieldFocusNode2 ??= FocusNode();
+    _model.workEmailTextFieldEmailFocusNode ??= FocusNode();
 
-    _model.positionTitleTextFieldFocusNode2 ??= FocusNode();
+    _model.positionTitleTextFieldEmailFocusNode ??= FocusNode();
   }
 
   @override
@@ -188,14 +188,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .fullNameTextFieldController1 ??=
+                                                          .fullNameTextFieldSMSController ??=
                                                       TextEditingController(
                                                     text:
                                                         userBySMSContainerPreregisteredUsersRecord
                                                             ?.displayName,
                                                   ),
                                                   focusNode: _model
-                                                      .fullNameTextFieldFocusNode1,
+                                                      .fullNameTextFieldSMSFocusNode,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Full name',
@@ -264,7 +264,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                           context)
                                                       .bodyMedium,
                                                   validator: _model
-                                                      .fullNameTextFieldController1Validator
+                                                      .fullNameTextFieldSMSControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -274,14 +274,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .mobileNumberTextFieldController1 ??=
+                                                          .mobileNumberTextFieldSMSController ??=
                                                       TextEditingController(
                                                     text:
                                                         userBySMSContainerPreregisteredUsersRecord
                                                             ?.phoneNumber,
                                                   ),
                                                   focusNode: _model
-                                                      .mobileNumberTextFieldFocusNode1,
+                                                      .mobileNumberTextFieldSMSFocusNode,
                                                   readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -351,7 +351,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   keyboardType:
                                                       TextInputType.phone,
                                                   validator: _model
-                                                      .mobileNumberTextFieldController1Validator
+                                                      .mobileNumberTextFieldSMSControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -361,14 +361,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .workEmailTextFieldController1 ??=
+                                                          .workEmailTextFieldSMSController ??=
                                                       TextEditingController(
                                                     text:
                                                         userBySMSContainerPreregisteredUsersRecord
                                                             ?.workEmail,
                                                   ),
                                                   focusNode: _model
-                                                      .workEmailTextFieldFocusNode1,
+                                                      .workEmailTextFieldSMSFocusNode,
                                                   readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -438,7 +438,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   keyboardType: TextInputType
                                                       .emailAddress,
                                                   validator: _model
-                                                      .workEmailTextFieldController1Validator
+                                                      .workEmailTextFieldSMSControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -448,14 +448,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .positionTitleTextFieldController1 ??=
+                                                          .positionTitleTextFieldSMSController ??=
                                                       TextEditingController(
                                                     text:
                                                         userBySMSContainerPreregisteredUsersRecord
                                                             ?.positionTitle,
                                                   ),
                                                   focusNode: _model
-                                                      .positionTitleTextFieldFocusNode1,
+                                                      .positionTitleTextFieldSMSFocusNode,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Position title',
@@ -520,7 +520,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                           context)
                                                       .bodyMedium,
                                                   validator: _model
-                                                      .positionTitleTextFieldController1Validator
+                                                      .positionTitleTextFieldSMSControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -957,12 +957,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                               ),
                                                               child: Checkbox(
                                                                 value: _model
-                                                                        .tcCheckboxValue1 ??=
+                                                                        .tcCheckboxSMSValue ??=
                                                                     false,
                                                                 onChanged:
                                                                     (newValue) async {
                                                                   setState(() =>
-                                                                      _model.tcCheckboxValue1 =
+                                                                      _model.tcCheckboxSMSValue =
                                                                           newValue!);
                                                                   if (newValue!) {
                                                                     // tcToggleOn
@@ -1202,7 +1202,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                             return;
                                                           }
                                                           if (_model
-                                                              .tcCheckboxValue1!) {
+                                                              .tcCheckboxSMSValue!) {
                                                             var usersRecordReference =
                                                                 UsersRecord
                                                                     .collection
@@ -1218,16 +1218,16 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                 .set(
                                                                     createUsersRecordData(
                                                               displayName: _model
-                                                                  .fullNameTextFieldController1
+                                                                  .fullNameTextFieldSMSController
                                                                   .text,
                                                               phoneNumber: _model
-                                                                  .mobileNumberTextFieldController1
+                                                                  .mobileNumberTextFieldSMSController
                                                                   .text,
                                                               workEmail: _model
-                                                                  .workEmailTextFieldController1
+                                                                  .workEmailTextFieldSMSController
                                                                   .text,
                                                               positionTitle: _model
-                                                                  .positionTitleTextFieldController1
+                                                                  .positionTitleTextFieldSMSController
                                                                   .text,
                                                               uid: random_data
                                                                   .randomString(
@@ -1243,25 +1243,27 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                   .businessUnitDropdownSMSValue,
                                                               strategicBusinessUnit:
                                                                   _model
-                                                                      .strategicBusinessUnitDropdownValue,
+                                                                      .strategicBusinessUnitDropdownSMSValue,
                                                               corporateServiceUnit:
                                                                   _model
                                                                       .corporateServiceUnitDropdownSMSValue,
+                                                              level: _model
+                                                                  .levelDropdownSMSValue,
                                                             ));
                                                             _model.createdUserBySMS =
                                                                 UsersRecord.getDocumentFromData(
                                                                     createUsersRecordData(
                                                                       displayName: _model
-                                                                          .fullNameTextFieldController1
+                                                                          .fullNameTextFieldSMSController
                                                                           .text,
                                                                       phoneNumber: _model
-                                                                          .mobileNumberTextFieldController1
+                                                                          .mobileNumberTextFieldSMSController
                                                                           .text,
                                                                       workEmail: _model
-                                                                          .workEmailTextFieldController1
+                                                                          .workEmailTextFieldSMSController
                                                                           .text,
                                                                       positionTitle: _model
-                                                                          .positionTitleTextFieldController1
+                                                                          .positionTitleTextFieldSMSController
                                                                           .text,
                                                                       uid: random_data
                                                                           .randomString(
@@ -1278,10 +1280,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                               .businessUnitDropdownSMSValue,
                                                                       strategicBusinessUnit:
                                                                           _model
-                                                                              .strategicBusinessUnitDropdownValue,
+                                                                              .strategicBusinessUnitDropdownSMSValue,
                                                                       corporateServiceUnit:
                                                                           _model
                                                                               .corporateServiceUnitDropdownSMSValue,
+                                                                      level: _model
+                                                                          .levelDropdownSMSValue,
                                                                     ),
                                                                     usersRecordReference);
                                                             shouldSetState =
@@ -1455,14 +1459,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .fullNameTextFieldController2 ??=
+                                                          .fullNameTextFieldEmailController ??=
                                                       TextEditingController(
                                                     text:
                                                         userByEmailContainerPreregisteredUsersRecord
                                                             ?.displayName,
                                                   ),
                                                   focusNode: _model
-                                                      .fullNameTextFieldFocusNode2,
+                                                      .fullNameTextFieldEmailFocusNode,
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -1532,7 +1536,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                           context)
                                                       .bodyMedium,
                                                   validator: _model
-                                                      .fullNameTextFieldController2Validator
+                                                      .fullNameTextFieldEmailControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1542,14 +1546,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .mobileNumberTextFieldController2 ??=
+                                                          .mobileNumberTextFieldEmailController ??=
                                                       TextEditingController(
                                                     text:
                                                         userByEmailContainerPreregisteredUsersRecord
                                                             ?.phoneNumber,
                                                   ),
                                                   focusNode: _model
-                                                      .mobileNumberTextFieldFocusNode2,
+                                                      .mobileNumberTextFieldEmailFocusNode,
                                                   autofocus: true,
                                                   readOnly: true,
                                                   obscureText: false,
@@ -1620,7 +1624,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   keyboardType:
                                                       TextInputType.phone,
                                                   validator: _model
-                                                      .mobileNumberTextFieldController2Validator
+                                                      .mobileNumberTextFieldEmailControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1630,14 +1634,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .workEmailTextFieldController2 ??=
+                                                          .workEmailTextFieldEmailController ??=
                                                       TextEditingController(
                                                     text:
                                                         userByEmailContainerPreregisteredUsersRecord
                                                             ?.workEmail,
                                                   ),
                                                   focusNode: _model
-                                                      .workEmailTextFieldFocusNode2,
+                                                      .workEmailTextFieldEmailFocusNode,
                                                   autofocus: true,
                                                   readOnly: true,
                                                   obscureText: false,
@@ -1708,7 +1712,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   keyboardType: TextInputType
                                                       .emailAddress,
                                                   validator: _model
-                                                      .workEmailTextFieldController2Validator
+                                                      .workEmailTextFieldEmailControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1718,14 +1722,14 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                         0.0, 24.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                          .positionTitleTextFieldController2 ??=
+                                                          .positionTitleTextFieldEmailController ??=
                                                       TextEditingController(
                                                     text:
                                                         userByEmailContainerPreregisteredUsersRecord
                                                             ?.positionTitle,
                                                   ),
                                                   focusNode: _model
-                                                      .positionTitleTextFieldFocusNode2,
+                                                      .positionTitleTextFieldEmailFocusNode,
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -1791,7 +1795,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                           context)
                                                       .bodyMedium,
                                                   validator: _model
-                                                      .positionTitleTextFieldController2Validator
+                                                      .positionTitleTextFieldEmailControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1828,26 +1832,26 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       );
                                                     }
                                                     List<SbusRecord>
-                                                        strategicBusinessUnitDropdownSbusRecordList =
+                                                        strategicBusinessUnitDropdownEmailSbusRecordList =
                                                         snapshot.data!;
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .strategicBusinessUnitDropdownValueController ??=
+                                                              .strategicBusinessUnitDropdownEmailValueController ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.strategicBusinessUnitDropdownValue ??=
+                                                        _model.strategicBusinessUnitDropdownEmailValue ??=
                                                             userByEmailContainerPreregisteredUsersRecord
                                                                 ?.sbuId,
                                                       ),
                                                       options:
-                                                          strategicBusinessUnitDropdownSbusRecordList
+                                                          strategicBusinessUnitDropdownEmailSbusRecordList
                                                               .map((e) =>
                                                                   e.sbuName)
                                                               .toList(),
                                                       onChanged: (val) =>
                                                           setState(() => _model
-                                                                  .strategicBusinessUnitDropdownValue =
+                                                                  .strategicBusinessUnitDropdownEmailValue =
                                                               val),
                                                       width: 300.0,
                                                       height: 50.0,
@@ -1922,25 +1926,25 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       );
                                                     }
                                                     List<BusRecord>
-                                                        businessUnitDropdownBusRecordList =
+                                                        businessUnitDropdownEmailBusRecordList =
                                                         snapshot.data!;
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .businessUnitDropdownValueController ??=
+                                                              .businessUnitDropdownEmailValueController ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.businessUnitDropdownValue ??=
+                                                        _model.businessUnitDropdownEmailValue ??=
                                                             userByEmailContainerPreregisteredUsersRecord
                                                                 ?.businessUnit,
                                                       ),
                                                       options:
-                                                          businessUnitDropdownBusRecordList
+                                                          businessUnitDropdownEmailBusRecordList
                                                               .map((e) => e.bu)
                                                               .toList(),
                                                       onChanged: (val) =>
                                                           setState(() => _model
-                                                                  .businessUnitDropdownValue =
+                                                                  .businessUnitDropdownEmailValue =
                                                               val),
                                                       width: 300.0,
                                                       height: 50.0,
@@ -2017,25 +2021,25 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       );
                                                     }
                                                     List<CsusRecord>
-                                                        corporateServiceUnitDropdownCsusRecordList =
+                                                        corporateServiceUnitDropdownEmailCsusRecordList =
                                                         snapshot.data!;
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .corporateServiceUnitDropdownValueController ??=
+                                                              .corporateServiceUnitDropdownEmailValueController ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.corporateServiceUnitDropdownValue ??=
+                                                        _model.corporateServiceUnitDropdownEmailValue ??=
                                                             userByEmailContainerPreregisteredUsersRecord
                                                                 ?.corporateServiceUnit,
                                                       ),
                                                       options:
-                                                          corporateServiceUnitDropdownCsusRecordList
+                                                          corporateServiceUnitDropdownEmailCsusRecordList
                                                               .map((e) => e.csu)
                                                               .toList(),
                                                       onChanged: (val) =>
                                                           setState(() => _model
-                                                                  .corporateServiceUnitDropdownValue =
+                                                                  .corporateServiceUnitDropdownEmailValue =
                                                               val),
                                                       width: 300.0,
                                                       height: 50.0,
@@ -2112,26 +2116,26 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       );
                                                     }
                                                     List<LevelsRecord>
-                                                        levelDropdownLevelsRecordList =
+                                                        levelDropdownEmailLevelsRecordList =
                                                         snapshot.data!;
                                                     return FlutterFlowDropDown<
                                                         String>(
                                                       controller: _model
-                                                              .levelDropdownValueController ??=
+                                                              .levelDropdownEmailValueController ??=
                                                           FormFieldController<
                                                               String>(
-                                                        _model.levelDropdownValue ??=
+                                                        _model.levelDropdownEmailValue ??=
                                                             userByEmailContainerPreregisteredUsersRecord
                                                                 ?.level,
                                                       ),
                                                       options:
-                                                          levelDropdownLevelsRecordList
+                                                          levelDropdownEmailLevelsRecordList
                                                               .map((e) =>
                                                                   e.level)
                                                               .toList(),
                                                       onChanged: (val) =>
                                                           setState(() => _model
-                                                                  .levelDropdownValue =
+                                                                  .levelDropdownEmailValue =
                                                               val),
                                                       width: 300.0,
                                                       height: 50.0,
@@ -2228,12 +2232,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                               ),
                                                               child: Checkbox(
                                                                 value: _model
-                                                                        .tcCheckboxValue2 ??=
+                                                                        .tcCheckboxEmailValue ??=
                                                                     false,
                                                                 onChanged:
                                                                     (newValue) async {
                                                                   setState(() =>
-                                                                      _model.tcCheckboxValue2 =
+                                                                      _model.tcCheckboxEmailValue =
                                                                           newValue!);
                                                                   if (newValue!) {
                                                                     // tcToggleOn
@@ -2353,7 +2357,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                             return;
                                                           }
                                                           if (_model
-                                                              .tcCheckboxValue2!) {
+                                                              .tcCheckboxEmailValue!) {
                                                             var usersRecordReference =
                                                                 UsersRecord
                                                                     .collection
@@ -2369,16 +2373,16 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                 .set(
                                                                     createUsersRecordData(
                                                               displayName: _model
-                                                                  .fullNameTextFieldController1
+                                                                  .fullNameTextFieldEmailController
                                                                   .text,
                                                               phoneNumber: _model
-                                                                  .mobileNumberTextFieldController1
+                                                                  .mobileNumberTextFieldEmailController
                                                                   .text,
                                                               workEmail: _model
-                                                                  .workEmailTextFieldController1
+                                                                  .workEmailTextFieldEmailController
                                                                   .text,
                                                               positionTitle: _model
-                                                                  .positionTitleTextFieldController1
+                                                                  .positionTitleTextFieldEmailController
                                                                   .text,
                                                               uid: random_data
                                                                   .randomString(
@@ -2391,30 +2395,30 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                               createdTime:
                                                                   getCurrentTimestamp,
                                                               businessUnit: _model
-                                                                  .businessUnitDropdownValue,
+                                                                  .businessUnitDropdownEmailValue,
                                                               strategicBusinessUnit:
                                                                   _model
-                                                                      .strategicBusinessUnitDropdownValue,
+                                                                      .strategicBusinessUnitDropdownEmailValue,
                                                               corporateServiceUnit:
                                                                   _model
-                                                                      .corporateServiceUnitDropdownValue,
+                                                                      .corporateServiceUnitDropdownEmailValue,
                                                               level: _model
-                                                                  .levelDropdownValue,
+                                                                  .levelDropdownEmailValue,
                                                             ));
                                                             _model.createdUserByEmail =
                                                                 UsersRecord.getDocumentFromData(
                                                                     createUsersRecordData(
                                                                       displayName: _model
-                                                                          .fullNameTextFieldController1
+                                                                          .fullNameTextFieldEmailController
                                                                           .text,
                                                                       phoneNumber: _model
-                                                                          .mobileNumberTextFieldController1
+                                                                          .mobileNumberTextFieldEmailController
                                                                           .text,
                                                                       workEmail: _model
-                                                                          .workEmailTextFieldController1
+                                                                          .workEmailTextFieldEmailController
                                                                           .text,
                                                                       positionTitle: _model
-                                                                          .positionTitleTextFieldController1
+                                                                          .positionTitleTextFieldEmailController
                                                                           .text,
                                                                       uid: random_data
                                                                           .randomString(
@@ -2428,15 +2432,15 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                           getCurrentTimestamp,
                                                                       businessUnit:
                                                                           _model
-                                                                              .businessUnitDropdownValue,
+                                                                              .businessUnitDropdownEmailValue,
                                                                       strategicBusinessUnit:
                                                                           _model
-                                                                              .strategicBusinessUnitDropdownValue,
+                                                                              .strategicBusinessUnitDropdownEmailValue,
                                                                       corporateServiceUnit:
                                                                           _model
-                                                                              .corporateServiceUnitDropdownValue,
+                                                                              .corporateServiceUnitDropdownEmailValue,
                                                                       level: _model
-                                                                          .levelDropdownValue,
+                                                                          .levelDropdownEmailValue,
                                                                     ),
                                                                     usersRecordReference);
                                                             shouldSetState =

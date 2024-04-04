@@ -62,12 +62,12 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
   final unfocusNode = FocusNode();
   final formKey1 = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
-  // State field(s) for fullNameTextField widget.
-  FocusNode? fullNameTextFieldFocusNode1;
-  TextEditingController? fullNameTextFieldController1;
+  // State field(s) for fullNameTextFieldSMS widget.
+  FocusNode? fullNameTextFieldSMSFocusNode;
+  TextEditingController? fullNameTextFieldSMSController;
   String? Function(BuildContext, String?)?
-      fullNameTextFieldController1Validator;
-  String? _fullNameTextFieldController1Validator(
+      fullNameTextFieldSMSControllerValidator;
+  String? _fullNameTextFieldSMSControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
@@ -79,12 +79,12 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
     return null;
   }
 
-  // State field(s) for mobileNumberTextField widget.
-  FocusNode? mobileNumberTextFieldFocusNode1;
-  TextEditingController? mobileNumberTextFieldController1;
+  // State field(s) for mobileNumberTextFieldSMS widget.
+  FocusNode? mobileNumberTextFieldSMSFocusNode;
+  TextEditingController? mobileNumberTextFieldSMSController;
   String? Function(BuildContext, String?)?
-      mobileNumberTextFieldController1Validator;
-  String? _mobileNumberTextFieldController1Validator(
+      mobileNumberTextFieldSMSControllerValidator;
+  String? _mobileNumberTextFieldSMSControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
@@ -96,12 +96,12 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
     return null;
   }
 
-  // State field(s) for workEmailTextField widget.
-  FocusNode? workEmailTextFieldFocusNode1;
-  TextEditingController? workEmailTextFieldController1;
+  // State field(s) for workEmailTextFieldSMS widget.
+  FocusNode? workEmailTextFieldSMSFocusNode;
+  TextEditingController? workEmailTextFieldSMSController;
   String? Function(BuildContext, String?)?
-      workEmailTextFieldController1Validator;
-  String? _workEmailTextFieldController1Validator(
+      workEmailTextFieldSMSControllerValidator;
+  String? _workEmailTextFieldSMSControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
@@ -113,12 +113,12 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
     return null;
   }
 
-  // State field(s) for positionTitleTextField widget.
-  FocusNode? positionTitleTextFieldFocusNode1;
-  TextEditingController? positionTitleTextFieldController1;
+  // State field(s) for positionTitleTextFieldSMS widget.
+  FocusNode? positionTitleTextFieldSMSFocusNode;
+  TextEditingController? positionTitleTextFieldSMSController;
   String? Function(BuildContext, String?)?
-      positionTitleTextFieldController1Validator;
-  String? _positionTitleTextFieldController1Validator(
+      positionTitleTextFieldSMSControllerValidator;
+  String? _positionTitleTextFieldSMSControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Field is required';
@@ -139,44 +139,45 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
   // State field(s) for levelDropdownSMS widget.
   String? levelDropdownSMSValue;
   FormFieldController<String>? levelDropdownSMSValueController;
-  // State field(s) for tcCheckbox widget.
-  bool? tcCheckboxValue1;
+  // State field(s) for tcCheckboxSMS widget.
+  bool? tcCheckboxSMSValue;
   // Stores action output result for [Backend Call - Create Document] action in signupButtonBySMS widget.
   UsersRecord? createdUserBySMS;
-  // State field(s) for fullNameTextField widget.
-  FocusNode? fullNameTextFieldFocusNode2;
-  TextEditingController? fullNameTextFieldController2;
+  // State field(s) for fullNameTextFieldEmail widget.
+  FocusNode? fullNameTextFieldEmailFocusNode;
+  TextEditingController? fullNameTextFieldEmailController;
   String? Function(BuildContext, String?)?
-      fullNameTextFieldController2Validator;
-  // State field(s) for mobileNumberTextField widget.
-  FocusNode? mobileNumberTextFieldFocusNode2;
-  TextEditingController? mobileNumberTextFieldController2;
+      fullNameTextFieldEmailControllerValidator;
+  // State field(s) for mobileNumberTextFieldEmail widget.
+  FocusNode? mobileNumberTextFieldEmailFocusNode;
+  TextEditingController? mobileNumberTextFieldEmailController;
   String? Function(BuildContext, String?)?
-      mobileNumberTextFieldController2Validator;
-  // State field(s) for workEmailTextField widget.
-  FocusNode? workEmailTextFieldFocusNode2;
-  TextEditingController? workEmailTextFieldController2;
+      mobileNumberTextFieldEmailControllerValidator;
+  // State field(s) for workEmailTextFieldEmail widget.
+  FocusNode? workEmailTextFieldEmailFocusNode;
+  TextEditingController? workEmailTextFieldEmailController;
   String? Function(BuildContext, String?)?
-      workEmailTextFieldController2Validator;
-  // State field(s) for positionTitleTextField widget.
-  FocusNode? positionTitleTextFieldFocusNode2;
-  TextEditingController? positionTitleTextFieldController2;
+      workEmailTextFieldEmailControllerValidator;
+  // State field(s) for positionTitleTextFieldEmail widget.
+  FocusNode? positionTitleTextFieldEmailFocusNode;
+  TextEditingController? positionTitleTextFieldEmailController;
   String? Function(BuildContext, String?)?
-      positionTitleTextFieldController2Validator;
-  // State field(s) for strategicBusinessUnitDropdown widget.
-  String? strategicBusinessUnitDropdownValue;
-  FormFieldController<String>? strategicBusinessUnitDropdownValueController;
-  // State field(s) for businessUnitDropdown widget.
-  String? businessUnitDropdownValue;
-  FormFieldController<String>? businessUnitDropdownValueController;
-  // State field(s) for corporateServiceUnitDropdown widget.
-  String? corporateServiceUnitDropdownValue;
-  FormFieldController<String>? corporateServiceUnitDropdownValueController;
-  // State field(s) for levelDropdown widget.
-  String? levelDropdownValue;
-  FormFieldController<String>? levelDropdownValueController;
-  // State field(s) for tcCheckbox widget.
-  bool? tcCheckboxValue2;
+      positionTitleTextFieldEmailControllerValidator;
+  // State field(s) for strategicBusinessUnitDropdownEmail widget.
+  String? strategicBusinessUnitDropdownEmailValue;
+  FormFieldController<String>?
+      strategicBusinessUnitDropdownEmailValueController;
+  // State field(s) for businessUnitDropdownEmail widget.
+  String? businessUnitDropdownEmailValue;
+  FormFieldController<String>? businessUnitDropdownEmailValueController;
+  // State field(s) for corporateServiceUnitDropdownEmail widget.
+  String? corporateServiceUnitDropdownEmailValue;
+  FormFieldController<String>? corporateServiceUnitDropdownEmailValueController;
+  // State field(s) for levelDropdownEmail widget.
+  String? levelDropdownEmailValue;
+  FormFieldController<String>? levelDropdownEmailValueController;
+  // State field(s) for tcCheckboxEmail widget.
+  bool? tcCheckboxEmailValue;
   // Stores action output result for [Backend Call - Create Document] action in SignUpButtoByEmail widget.
   UsersRecord? createdUserByEmail;
 
@@ -184,42 +185,42 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
 
   @override
   void initState(BuildContext context) {
-    fullNameTextFieldController1Validator =
-        _fullNameTextFieldController1Validator;
-    mobileNumberTextFieldController1Validator =
-        _mobileNumberTextFieldController1Validator;
-    workEmailTextFieldController1Validator =
-        _workEmailTextFieldController1Validator;
-    positionTitleTextFieldController1Validator =
-        _positionTitleTextFieldController1Validator;
+    fullNameTextFieldSMSControllerValidator =
+        _fullNameTextFieldSMSControllerValidator;
+    mobileNumberTextFieldSMSControllerValidator =
+        _mobileNumberTextFieldSMSControllerValidator;
+    workEmailTextFieldSMSControllerValidator =
+        _workEmailTextFieldSMSControllerValidator;
+    positionTitleTextFieldSMSControllerValidator =
+        _positionTitleTextFieldSMSControllerValidator;
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
-    fullNameTextFieldFocusNode1?.dispose();
-    fullNameTextFieldController1?.dispose();
+    fullNameTextFieldSMSFocusNode?.dispose();
+    fullNameTextFieldSMSController?.dispose();
 
-    mobileNumberTextFieldFocusNode1?.dispose();
-    mobileNumberTextFieldController1?.dispose();
+    mobileNumberTextFieldSMSFocusNode?.dispose();
+    mobileNumberTextFieldSMSController?.dispose();
 
-    workEmailTextFieldFocusNode1?.dispose();
-    workEmailTextFieldController1?.dispose();
+    workEmailTextFieldSMSFocusNode?.dispose();
+    workEmailTextFieldSMSController?.dispose();
 
-    positionTitleTextFieldFocusNode1?.dispose();
-    positionTitleTextFieldController1?.dispose();
+    positionTitleTextFieldSMSFocusNode?.dispose();
+    positionTitleTextFieldSMSController?.dispose();
 
-    fullNameTextFieldFocusNode2?.dispose();
-    fullNameTextFieldController2?.dispose();
+    fullNameTextFieldEmailFocusNode?.dispose();
+    fullNameTextFieldEmailController?.dispose();
 
-    mobileNumberTextFieldFocusNode2?.dispose();
-    mobileNumberTextFieldController2?.dispose();
+    mobileNumberTextFieldEmailFocusNode?.dispose();
+    mobileNumberTextFieldEmailController?.dispose();
 
-    workEmailTextFieldFocusNode2?.dispose();
-    workEmailTextFieldController2?.dispose();
+    workEmailTextFieldEmailFocusNode?.dispose();
+    workEmailTextFieldEmailController?.dispose();
 
-    positionTitleTextFieldFocusNode2?.dispose();
-    positionTitleTextFieldController2?.dispose();
+    positionTitleTextFieldEmailFocusNode?.dispose();
+    positionTitleTextFieldEmailController?.dispose();
   }
 
   /// Action blocks are added here.

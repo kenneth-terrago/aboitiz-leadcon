@@ -91,11 +91,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ContactInformationWidget(),
         ),
         FFRoute(
-          name: 'forceUpdate',
-          path: '/forceUpdate',
-          builder: (context, params) => ForceUpdateWidget(
-            email: params.getParam('email', ParamType.String),
-          ),
+          name: 'forceUpdatePage',
+          path: '/forceUpdatePage',
+          builder: (context, params) => const ForceUpdatePageWidget(),
         ),
         FFRoute(
           name: 'checkingInfoPage',
@@ -224,6 +222,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'initialLoadingPage',
           path: '/initialLoadingPage',
           builder: (context, params) => const InitialLoadingPageWidget(),
+        ),
+        FFRoute(
+          name: 'newUpdatePage',
+          path: '/newUpdatePage',
+          builder: (context, params) => const NewUpdatePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

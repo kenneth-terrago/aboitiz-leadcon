@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -27,14 +28,31 @@ class _InitialLoadingPageWidgetState extends State<InitialLoadingPageWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(const Duration(milliseconds: 2000));
-      if (FFAppState().isAuthenticated) {
-        context.pushNamed('dashboardHome');
+      _model.appVersion = await actions.getAppVersion();
+      // getAppVersionInt
+      _model.appVerstionInt = actions.getExtendedVersionNumber(
+        _model.appVersion!,
+      );
+      _model.requiredMinVersionInt = actions.getExtendedVersionNumber(
+        getRemoteConfigString('requiredMinimumVersion'),
+      );
+      _model.recommendedMinVersionInt = actions.getExtendedVersionNumber(
+        getRemoteConfigString('recommendedMinimumVersion'),
+      );
+      if (_model.appVerstionInt! < _model.requiredMinVersionInt!) {
+        context.goNamed('forceUpdatePage');
 
         return;
       } else {
-        context.pushNamed('verifyUserPage');
+        if (FFAppState().isAuthenticated) {
+          context.pushNamed('dashboardHome');
 
-        return;
+          return;
+        } else {
+          context.pushNamed('verifyUserPage');
+
+          return;
+        }
       }
     });
   }

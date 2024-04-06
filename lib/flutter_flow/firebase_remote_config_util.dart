@@ -6,7 +6,8 @@ Future initializeFirebaseRemoteConfig() async {
     minimumFetchInterval: const Duration(hours: 1),
   ));
   await FirebaseRemoteConfig.instance.setDefaults(const {
-    'min_app_version': '1.0.0',
+    'requiredMinimumVersion': '1.0.0',
+    'recommendedMinimumVersion': '1.0.0',
   });
   await FirebaseRemoteConfig.instance.fetchAndActivate();
 }

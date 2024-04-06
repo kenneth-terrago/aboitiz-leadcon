@@ -7,8 +7,8 @@ export '/auth_folder/signin_password_new/signin_password_new_widget.dart'
     show SigninPasswordNewWidget;
 export '/unsorted_pages/contact_information/contact_information_widget.dart'
     show ContactInformationWidget;
-export '/unsorted_pages/force_update/force_update_widget.dart'
-    show ForceUpdateWidget;
+export '/unsorted_pages/force_update_page/force_update_page_widget.dart'
+    show ForceUpdatePageWidget;
 export '/registration_folder/checking_info_page/checking_info_page_widget.dart'
     show CheckingInfoPageWidget;
 export '/auth_folder/verify_user_page/verify_user_page_widget.dart'
@@ -45,3 +45,5 @@ export '/chat_bot_folder/chatbot_page/chatbot_page_widget.dart'
     show ChatbotPageWidget;
 export '/unsorted_pages/initial_loading_page/initial_loading_page_widget.dart'
     show InitialLoadingPageWidget;
+export '/unsorted_pages/new_update_page/new_update_page_widget.dart'
+    show NewUpdatePageWidget;

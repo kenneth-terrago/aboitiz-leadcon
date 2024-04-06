@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'force_update_widget.dart' show ForceUpdateWidget;
+import 'new_update_page_widget.dart' show NewUpdatePageWidget;
 import 'package:flutter/material.dart';
 
-class ForceUpdateModel extends FlutterFlowModel<ForceUpdateWidget> {
+class NewUpdatePageModel extends FlutterFlowModel<NewUpdatePageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

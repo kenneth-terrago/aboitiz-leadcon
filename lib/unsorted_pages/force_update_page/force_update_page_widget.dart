@@ -4,30 +4,25 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'force_update_model.dart';
-export 'force_update_model.dart';
+import 'force_update_page_model.dart';
+export 'force_update_page_model.dart';
 
-class ForceUpdateWidget extends StatefulWidget {
-  const ForceUpdateWidget({
-    super.key,
-    this.email,
-  });
-
-  final String? email;
+class ForceUpdatePageWidget extends StatefulWidget {
+  const ForceUpdatePageWidget({super.key});
 
   @override
-  State<ForceUpdateWidget> createState() => _ForceUpdateWidgetState();
+  State<ForceUpdatePageWidget> createState() => _ForceUpdatePageWidgetState();
 }
 
-class _ForceUpdateWidgetState extends State<ForceUpdateWidget> {
-  late ForceUpdateModel _model;
+class _ForceUpdatePageWidgetState extends State<ForceUpdatePageWidget> {
+  late ForceUpdatePageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ForceUpdateModel());
+    _model = createModel(context, () => ForceUpdatePageModel());
   }
 
   @override
@@ -120,8 +115,16 @@ class _ForceUpdateWidgetState extends State<ForceUpdateWidget> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await launchURL(() {
+                                if (isAndroid) {
+                                  return 'https://play.google.com/store/apps/details?id=com.ubx.leadconaboitizapplication';
+                                } else if (isiOS) {
+                                  return 'https://apps.apple.com/us/app/aboitiz-leadcon-navigator/id6479282897';
+                                } else {
+                                  return 'https://play.google.com/store/apps/details?id=com.ubx.leadconaboitizapplication';
+                                }
+                              }());
                             },
                             text: 'Update',
                             options: FFButtonOptions(

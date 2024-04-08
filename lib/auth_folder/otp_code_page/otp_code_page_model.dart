@@ -28,7 +28,7 @@ class OtpCodePageModel extends FlutterFlowModel<OtpCodePageWidget> {
   ApiCallResponse? smsOTPResponse;
   // Stores action output result for [Backend Call - API (Getting the access token)] action in Text widget.
   ApiCallResponse? accessTokenResponseEmail;
-  // Stores action output result for [Backend Call - API (Send SMS OTP)] action in Text widget.
+  // Stores action output result for [Backend Call - API (Send Email OTP)] action in Text widget.
   ApiCallResponse? emailOTPResponse;
   // State field(s) for Timer widget.
   int timerMilliseconds = 120000;

@@ -341,29 +341,22 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                         );
                                       });
                                       _model.emailOTPResponse =
-                                          await SendSMSOTPCall.call(
-                                        destination: widget.destination,
+                                          await SendEmailOTPCall.call(
                                         accessToken: GettingTheAccessTokenCall
                                             .accessToken(
                                           (_model.accessTokenResponseEmail
                                                   ?.jsonBody ??
                                               ''),
                                         ),
+                                        destination: widget.destination,
                                       );
                                       shouldSetState = true;
-                                      if (SendSMSOTPCall.status(
+                                      if (SendEmailOTPCall.status(
                                             (_model.emailOTPResponse
                                                     ?.jsonBody ??
                                                 ''),
                                           ) ==
                                           200) {
-                                        setState(() {
-                                          _model.uid = SendSMSOTPCall.uid(
-                                            (_model.emailOTPResponse
-                                                    ?.jsonBody ??
-                                                ''),
-                                          );
-                                        });
                                         setState(() {
                                           _model
                                               .otpCodeLcModel.pinCodeController
@@ -380,7 +373,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                             .showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              SendSMSOTPCall.message(
+                                              SendEmailOTPCall.message(
                                                 (_model.emailOTPResponse
                                                         ?.jsonBody ??
                                                     ''),

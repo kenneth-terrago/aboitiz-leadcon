@@ -124,6 +124,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                       fontFamily: 'Inter',
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 16.0,
+                      letterSpacing: 0.0,
                     ),
               ),
               actions: const [],
@@ -171,6 +172,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                               .override(
                                 fontFamily: 'Inter',
                                 fontSize: 32.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
                               ),
                         ),
@@ -209,6 +211,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                             .override(
                                               fontFamily: 'Inter',
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
@@ -254,6 +257,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                             .override(
                                               fontFamily: 'Inter',
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                       ),
@@ -266,6 +270,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                           .override(
                                             fontFamily: 'Inter',
                                             fontSize: 14.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -366,6 +371,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         fontSize: 16.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -380,6 +386,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -393,6 +400,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                           fontStyle:
@@ -429,6 +437,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                       .override(
                                         fontFamily: 'Inter',
                                         fontSize: 20.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.normal,
                                       ),
                                 ),
@@ -442,6 +451,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -465,6 +475,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                     .override(
                                       fontFamily: 'Inter',
                                       fontSize: 20.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -481,6 +492,7 @@ class _AgendaDetailsWidgetState extends State<AgendaDetailsWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),

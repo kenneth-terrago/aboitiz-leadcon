@@ -181,8 +181,6 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
   // Stores action output result for [Backend Call - Create Document] action in SignUpButtoByEmail widget.
   UsersRecord? createdUserByEmail;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     fullNameTextFieldSMSControllerValidator =
@@ -222,8 +220,4 @@ class CheckingInfoPageModel extends FlutterFlowModel<CheckingInfoPageWidget> {
     positionTitleTextFieldEmailFocusNode?.dispose();
     positionTitleTextFieldEmailController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

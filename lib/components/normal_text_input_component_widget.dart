@@ -56,8 +56,14 @@ class _NormalTextInputComponentWidgetState
         obscureText: false,
         decoration: InputDecoration(
           labelText: widget.label,
-          labelStyle: FlutterFlowTheme.of(context).bodyMedium,
-          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+          labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                fontFamily: 'Inter',
+                letterSpacing: 0.0,
+              ),
+          hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                fontFamily: 'Inter',
+                letterSpacing: 0.0,
+              ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color: FlutterFlowTheme.of(context).gray200,
@@ -87,7 +93,11 @@ class _NormalTextInputComponentWidgetState
             borderRadius: BorderRadius.circular(6.0),
           ),
         ),
-        style: FlutterFlowTheme.of(context).bodyMedium,
+        style: FlutterFlowTheme.of(context).bodyMedium.override(
+              fontFamily: 'Inter',
+              letterSpacing: 0.0,
+            ),
+        minLines: null,
         validator: _model.textControllerValidator.asValidator(context),
       ),
     );

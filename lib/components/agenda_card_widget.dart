@@ -93,6 +93,7 @@ class _AgendaCardWidgetState extends State<AgendaCardWidget> {
                   style: FlutterFlowTheme.of(context).bodySmall.override(
                         fontFamily: 'Inter',
                         fontSize: 12.0,
+                        letterSpacing: 0.0,
                         fontWeight: FontWeight.normal,
                       ),
                 ),
@@ -112,6 +113,7 @@ class _AgendaCardWidgetState extends State<AgendaCardWidget> {
                           fontFamily: 'Inter',
                           color: FlutterFlowTheme.of(context).primaryText,
                           fontSize: 20.0,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
                         ),
                   ),

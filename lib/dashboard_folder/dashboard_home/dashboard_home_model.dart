@@ -21,8 +21,6 @@ class DashboardHomeModel extends FlutterFlowModel<DashboardHomeWidget> {
   // Model for featureCard component.
   late FeatureCardModel featureCardModel5;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     mainFeatureCardModel = createModel(context, () => MainFeatureCardModel());
@@ -43,8 +41,4 @@ class DashboardHomeModel extends FlutterFlowModel<DashboardHomeWidget> {
     featureCardModel4.dispose();
     featureCardModel5.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

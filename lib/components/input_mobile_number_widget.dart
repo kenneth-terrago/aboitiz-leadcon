@@ -52,6 +52,7 @@ class _InputMobileNumberWidgetState extends State<InputMobileNumberWidget> {
       child: TextFormField(
         controller: _model.mobileNumberController,
         focusNode: _model.mobileNumberFocusNode,
+        autofocus: false,
         textCapitalization: TextCapitalization.none,
         obscureText: false,
         decoration: InputDecoration(
@@ -62,6 +63,7 @@ class _InputMobileNumberWidgetState extends State<InputMobileNumberWidget> {
           labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: 'Inter',
                 color: FlutterFlowTheme.of(context).secondaryText,
+                letterSpacing: 0.0,
               ),
           hintText: widget.hintText,
           enabledBorder: OutlineInputBorder(
@@ -93,7 +95,11 @@ class _InputMobileNumberWidgetState extends State<InputMobileNumberWidget> {
             borderRadius: BorderRadius.circular(6.0),
           ),
         ),
-        style: FlutterFlowTheme.of(context).bodyMedium,
+        style: FlutterFlowTheme.of(context).bodyMedium.override(
+              fontFamily: 'Inter',
+              letterSpacing: 0.0,
+            ),
+        minLines: null,
         keyboardType: TextInputType.phone,
         validator: _model.mobileNumberControllerValidator.asValidator(context),
       ),

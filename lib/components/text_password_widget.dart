@@ -65,7 +65,10 @@ class _TextPasswordWidgetState extends State<TextPasswordWidget> {
             autofocus: true,
             obscureText: !_model.passwordVisibility,
             decoration: InputDecoration(
-              hintStyle: FlutterFlowTheme.of(context).bodyMedium,
+              hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Inter',
+                    letterSpacing: 0.0,
+                  ),
               enabledBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: Color(0xFFB7B9C0),
@@ -110,7 +113,11 @@ class _TextPasswordWidgetState extends State<TextPasswordWidget> {
                 ),
               ),
             ),
-            style: FlutterFlowTheme.of(context).bodyMedium,
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Inter',
+                  letterSpacing: 0.0,
+                ),
+            minLines: null,
             validator: _model.textControllerValidator.asValidator(context),
           ),
         ],

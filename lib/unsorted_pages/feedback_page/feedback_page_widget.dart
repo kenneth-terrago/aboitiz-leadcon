@@ -99,6 +99,7 @@ class _FeedbackPageWidgetState extends State<FeedbackPageWidget> {
                       fontFamily: 'Inter',
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 16.0,
+                      letterSpacing: 0.0,
                     ),
               ),
               actions: const [],

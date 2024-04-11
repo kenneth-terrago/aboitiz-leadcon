@@ -51,6 +51,7 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
       child: TextFormField(
         controller: _model.passwordController,
         focusNode: _model.passwordFocusNode,
+        autofocus: false,
         textCapitalization: TextCapitalization.none,
         obscureText: !_model.passwordVisibility,
         decoration: InputDecoration(
@@ -61,6 +62,7 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
           labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: 'Inter',
                 color: FlutterFlowTheme.of(context).secondaryText,
+                letterSpacing: 0.0,
               ),
           hintText: widget.hintText,
           enabledBorder: OutlineInputBorder(
@@ -105,7 +107,11 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
             ),
           ),
         ),
-        style: FlutterFlowTheme.of(context).bodyMedium,
+        style: FlutterFlowTheme.of(context).bodyMedium.override(
+              fontFamily: 'Inter',
+              letterSpacing: 0.0,
+            ),
+        minLines: null,
         keyboardType: TextInputType.visiblePassword,
         validator: _model.passwordControllerValidator.asValidator(context),
       ),

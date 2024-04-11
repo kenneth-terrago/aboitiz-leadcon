@@ -79,6 +79,7 @@ class _EventPageWidgetState extends State<EventPageWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: const [],

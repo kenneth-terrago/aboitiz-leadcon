@@ -11,8 +11,6 @@ class TextPasswordModel extends FlutterFlowModel<TextPasswordWidget> {
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? textControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
@@ -23,8 +21,4 @@ class TextPasswordModel extends FlutterFlowModel<TextPasswordWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

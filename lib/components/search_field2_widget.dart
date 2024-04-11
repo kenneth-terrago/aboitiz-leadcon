@@ -88,7 +88,11 @@ class _SearchField2WidgetState extends State<SearchField2Widget> {
         filled: true,
         fillColor: Colors.white,
       ),
-      style: FlutterFlowTheme.of(context).bodyMedium,
+      style: FlutterFlowTheme.of(context).bodyMedium.override(
+            fontFamily: 'Inter',
+            letterSpacing: 0.0,
+          ),
+      minLines: null,
       validator: _model.textControllerValidator.asValidator(context),
     );
   }

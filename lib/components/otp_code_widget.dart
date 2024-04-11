@@ -45,6 +45,7 @@ class _OtpCodeWidgetState extends State<OtpCodeWidget> {
         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
               fontFamily: 'Inter',
               color: FlutterFlowTheme.of(context).secondary,
+              letterSpacing: 0.0,
             ),
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         enableActiveFill: false,

@@ -108,6 +108,7 @@ class _DocumentWidgetState extends State<DocumentWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
                               fontSize: 16.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.normal,
                             ),
                       ),

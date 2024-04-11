@@ -78,6 +78,7 @@ class _SbuLandingWidgetState extends State<SbuLandingWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
@@ -214,6 +215,7 @@ class _SbuLandingWidgetState extends State<SbuLandingWidget> {
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),

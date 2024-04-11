@@ -81,6 +81,7 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
@@ -116,11 +117,16 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                     fontFamily: 'Inter',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
                             )
                           ],
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     ),
@@ -195,6 +201,7 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
@@ -251,7 +258,11 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                                 ],
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -339,6 +350,7 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -361,7 +373,11 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),

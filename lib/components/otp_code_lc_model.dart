@@ -9,8 +9,6 @@ class OtpCodeLcModel extends FlutterFlowModel<OtpCodeLcWidget> {
   TextEditingController? pinCodeController;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     pinCodeController = TextEditingController();
@@ -20,8 +18,4 @@ class OtpCodeLcModel extends FlutterFlowModel<OtpCodeLcWidget> {
   void dispose() {
     pinCodeController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

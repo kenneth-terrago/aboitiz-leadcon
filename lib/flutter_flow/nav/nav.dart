@@ -62,27 +62,54 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'otpCodePage',
           path: '/otpCodePage',
           builder: (context, params) => OtpCodePageWidget(
-            destination: params.getParam('destination', ParamType.String),
-            uid: params.getParam('uid', ParamType.String),
-            accessToken: params.getParam('accessToken', ParamType.String),
-            isSMSOTP: params.getParam('isSMSOTP', ParamType.bool),
-            goToPage: params.getParam('goToPage', ParamType.String),
-            isTestUser: params.getParam('isTestUser', ParamType.bool),
+            destination: params.getParam(
+              'destination',
+              ParamType.String,
+            ),
+            uid: params.getParam(
+              'uid',
+              ParamType.String,
+            ),
+            accessToken: params.getParam(
+              'accessToken',
+              ParamType.String,
+            ),
+            isSMSOTP: params.getParam(
+              'isSMSOTP',
+              ParamType.bool,
+            ),
+            goToPage: params.getParam(
+              'goToPage',
+              ParamType.String,
+            ),
+            isTestUser: params.getParam(
+              'isTestUser',
+              ParamType.bool,
+            ),
           ),
         ),
         FFRoute(
           name: 'agendaOffline',
           path: '/agendaOffline',
           builder: (context, params) => AgendaOfflineWidget(
-            date: params.getParam('date', ParamType.DateTime),
-            dayNo: params.getParam('dayNo', ParamType.int),
+            date: params.getParam(
+              'date',
+              ParamType.DateTime,
+            ),
+            dayNo: params.getParam(
+              'dayNo',
+              ParamType.int,
+            ),
           ),
         ),
         FFRoute(
           name: 'signinPasswordNew',
           path: '/signinPasswordNew',
           builder: (context, params) => SigninPasswordNewWidget(
-            email: params.getParam('email', ParamType.String),
+            email: params.getParam(
+              'email',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -99,8 +126,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'checkingInfoPage',
           path: '/checkingInfoPage',
           builder: (context, params) => CheckingInfoPageWidget(
-            destination: params.getParam('destination', ParamType.String),
-            isSMSOTP: params.getParam('isSMSOTP', ParamType.bool),
+            destination: params.getParam(
+              'destination',
+              ParamType.String,
+            ),
+            isSMSOTP: params.getParam(
+              'isSMSOTP',
+              ParamType.bool,
+            ),
           ),
         ),
         FFRoute(
@@ -156,23 +189,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'sbuDetails',
           path: '/sbuDetails',
           builder: (context, params) => SbuDetailsWidget(
-            partnerId: params.getParam('partnerId', ParamType.int),
-            partnerTitle: params.getParam('partnerTitle', ParamType.String),
+            partnerId: params.getParam(
+              'partnerId',
+              ParamType.int,
+            ),
+            partnerTitle: params.getParam(
+              'partnerTitle',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'forgotPasswordPage',
           path: '/forgotPasswordPage',
           builder: (context, params) => ForgotPasswordPageWidget(
-            email: params.getParam('email', ParamType.String),
-            pageTitle: params.getParam('pageTitle', ParamType.String),
+            email: params.getParam(
+              'email',
+              ParamType.String,
+            ),
+            pageTitle: params.getParam(
+              'pageTitle',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'agendaPage',
           path: '/agendaPage',
           builder: (context, params) => AgendaPageWidget(
-            date: params.getParam('date', ParamType.DateTime),
+            date: params.getParam(
+              'date',
+              ParamType.DateTime,
+            ),
           ),
         ),
         FFRoute(
@@ -184,33 +232,56 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'agendaDetails',
           path: '/agendaDetails',
           builder: (context, params) => AgendaDetailsWidget(
-            agendaId: params.getParam('agendaId', ParamType.int),
-            agendaTitle: params.getParam('agendaTitle', ParamType.String),
+            agendaId: params.getParam(
+              'agendaId',
+              ParamType.int,
+            ),
+            agendaTitle: params.getParam(
+              'agendaTitle',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'imageView',
           path: '/imageView',
           builder: (context, params) => ImageViewWidget(
-            imagePath: params.getParam('imagePath', ParamType.String),
-            imageLink: params.getParam('imageLink', ParamType.String),
+            imagePath: params.getParam(
+              'imagePath',
+              ParamType.String,
+            ),
+            imageLink: params.getParam(
+              'imageLink',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'galleryAlbumView',
           path: '/galleryAlbumView',
           builder: (context, params) => GalleryAlbumViewWidget(
-            albumId: params.getParam('albumId', ParamType.int),
-            albumTitle: params.getParam('albumTitle', ParamType.String),
+            albumId: params.getParam(
+              'albumId',
+              ParamType.int,
+            ),
+            albumTitle: params.getParam(
+              'albumTitle',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
           name: 'eventDetailsPage',
           path: '/eventDetailsPage',
           builder: (context, params) => EventDetailsPageWidget(
-            starterKitId: params.getParam('starterKitId', ParamType.int),
-            starterKitTitle:
-                params.getParam('starterKitTitle', ParamType.String),
+            starterKitId: params.getParam(
+              'starterKitId',
+              ParamType.int,
+            ),
+            starterKitTitle: params.getParam(
+              'starterKitTitle',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -313,8 +384,12 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList,
-        collectionNamePath: collectionNamePath);
+    return deserializeParam<T>(
+      param,
+      type,
+      isList,
+      collectionNamePath: collectionNamePath,
+    );
   }
 }
 

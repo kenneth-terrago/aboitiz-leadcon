@@ -55,8 +55,6 @@ class OtpCodePageModel extends FlutterFlowModel<OtpCodePageWidget> {
   // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
   UsersRecord? userDocumentByEmailTest;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     otpCodeLcModel = createModel(context, () => OtpCodeLcModel());
@@ -68,8 +66,4 @@ class OtpCodePageModel extends FlutterFlowModel<OtpCodePageWidget> {
     otpCodeLcModel.dispose();
     timerController.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

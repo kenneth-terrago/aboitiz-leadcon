@@ -92,6 +92,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
@@ -154,6 +155,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                   _model.isField = true;
                                 });
                               },
+                              autofocus: false,
                               textInputAction: TextInputAction.search,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -162,6 +164,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                     .override(
                                       fontFamily: 'Inter',
                                       fontSize: 14.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                                 hintText: 'Search Name...\n',
@@ -172,6 +175,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryText,
                                       fontSize: 14.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                                 enabledBorder: OutlineInputBorder(
@@ -204,7 +208,13 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
                               ),
-                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                              minLines: null,
                               validator: _model
                                   .searchTextFieldControllerValidator
                                   .asValidator(context),
@@ -514,6 +524,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -529,6 +541,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -542,6 +555,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .normal,
@@ -567,6 +581,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -675,6 +691,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -690,6 +708,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -703,6 +722,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .normal,
@@ -728,6 +748,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -836,6 +858,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -851,6 +875,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -864,6 +889,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .normal,
@@ -889,6 +915,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -994,6 +1022,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -1009,6 +1039,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -1022,6 +1053,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .normal,
@@ -1047,6 +1079,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -1182,6 +1216,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 16.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -1197,6 +1233,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -1210,6 +1247,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             fontSize: 12.0,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .normal,
@@ -1235,6 +1273,8 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,

@@ -10,8 +10,6 @@ class AgendaOfflineModel extends FlutterFlowModel<AgendaOfflineWidget> {
   // Model for offlineState component.
   late OfflineStateModel offlineStateModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     offlineStateModel = createModel(context, () => OfflineStateModel());
@@ -22,8 +20,4 @@ class AgendaOfflineModel extends FlutterFlowModel<AgendaOfflineWidget> {
     unfocusNode.dispose();
     offlineStateModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

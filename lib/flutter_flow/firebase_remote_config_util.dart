@@ -7,7 +7,7 @@ Future initializeFirebaseRemoteConfig() async {
   ));
   await FirebaseRemoteConfig.instance.setDefaults(const {
     'requiredMinimumVersion': '1.0.0',
-    'recommendedMinimumVersion': '1.0.0',
+    'feedbackVisibility': false,
   });
   await FirebaseRemoteConfig.instance.fetchAndActivate();
 }

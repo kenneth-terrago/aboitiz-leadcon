@@ -13,10 +13,6 @@ class InitialLoadingPageModel
   int? appVerstionInt;
   // Stores action output result for [Custom Action - getExtendedVersionNumber] action in initialLoadingPage widget.
   int? requiredMinVersionInt;
-  // Stores action output result for [Custom Action - getExtendedVersionNumber] action in initialLoadingPage widget.
-  int? recommendedMinVersionInt;
-
-  /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {}
@@ -25,8 +21,4 @@ class InitialLoadingPageModel
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

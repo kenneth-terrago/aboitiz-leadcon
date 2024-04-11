@@ -15,8 +15,6 @@ class ForgotPasswordPageModel
   // Model for primaryButton2 component.
   late PrimaryButton2Model primaryButton2Model;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     inputEmailModel = createModel(context, () => InputEmailModel());
@@ -29,8 +27,4 @@ class ForgotPasswordPageModel
     inputEmailModel.dispose();
     primaryButton2Model.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

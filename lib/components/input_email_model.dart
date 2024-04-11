@@ -10,8 +10,6 @@ class InputEmailModel extends FlutterFlowModel<InputEmailWidget> {
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -20,8 +18,4 @@ class InputEmailModel extends FlutterFlowModel<InputEmailWidget> {
     emailAddressFocusNode?.dispose();
     emailAddressController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

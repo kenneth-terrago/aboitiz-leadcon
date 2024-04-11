@@ -88,6 +88,7 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
@@ -202,6 +203,7 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         fontSize: 20.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),
@@ -226,6 +228,7 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         fontSize: 16.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                         lineHeight: 2.0,
@@ -246,25 +249,28 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                                   children: [
                                                     TextSpan(
                                                       text: 'Direction map: ',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                          ),
                                                     )
                                                   ],
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ),
                                             if (containerStarterKitRecord
@@ -344,6 +350,8 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .info,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -353,17 +361,16 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                                               ),
                                                         )
                                                       ],
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                 ),

@@ -79,7 +79,12 @@ class _FilterBottomSheetWidgetState extends State<FilterBottomSheetWidget> {
                         children: [
                           Text(
                             filterListItemsItem,
-                            style: FlutterFlowTheme.of(context).labelLarge,
+                            style: FlutterFlowTheme.of(context)
+                                .labelLarge
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ],
                       ),

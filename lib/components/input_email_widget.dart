@@ -57,6 +57,7 @@ class _InputEmailWidgetState extends State<InputEmailWidget> {
       child: TextFormField(
         controller: _model.emailAddressController,
         focusNode: _model.emailAddressFocusNode,
+        autofocus: false,
         readOnly: !widget.isEditable,
         obscureText: false,
         decoration: InputDecoration(
@@ -64,6 +65,7 @@ class _InputEmailWidgetState extends State<InputEmailWidget> {
           labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: 'Inter',
                 color: FlutterFlowTheme.of(context).secondaryText,
+                letterSpacing: 0.0,
               ),
           hintText: widget.hintText,
           enabledBorder: OutlineInputBorder(
@@ -95,7 +97,11 @@ class _InputEmailWidgetState extends State<InputEmailWidget> {
             borderRadius: BorderRadius.circular(6.0),
           ),
         ),
-        style: FlutterFlowTheme.of(context).bodyMedium,
+        style: FlutterFlowTheme.of(context).bodyMedium.override(
+              fontFamily: 'Inter',
+              letterSpacing: 0.0,
+            ),
+        minLines: null,
         keyboardType: TextInputType.emailAddress,
         validator: _model.emailAddressControllerValidator.asValidator(context),
       ),

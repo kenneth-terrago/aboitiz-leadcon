@@ -62,6 +62,7 @@ class _MainfeaturecardButtonWidgetState
         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
               fontFamily: 'Inter',
               color: Colors.white,
+              letterSpacing: 0.0,
             ),
         elevation: 2.0,
         borderSide: const BorderSide(

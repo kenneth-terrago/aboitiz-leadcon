@@ -36,9 +36,9 @@ class _InitialLoadingPageWidgetState extends State<InitialLoadingPageWidget> {
       _model.requiredMinVersionInt = actions.getExtendedVersionNumber(
         getRemoteConfigString('requiredMinimumVersion'),
       );
-      _model.recommendedMinVersionInt = actions.getExtendedVersionNumber(
-        getRemoteConfigString('recommendedMinimumVersion'),
-      );
+      setState(() {
+        FFAppState().appVersion = _model.appVersion!;
+      });
       if (_model.appVerstionInt! < _model.requiredMinVersionInt!) {
         context.goNamed('forceUpdatePage');
 

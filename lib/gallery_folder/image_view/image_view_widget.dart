@@ -76,6 +76,7 @@ class _ImageViewWidgetState extends State<ImageViewWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
                 ),
           ),

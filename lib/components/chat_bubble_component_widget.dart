@@ -63,7 +63,10 @@ class _ChatBubbleComponentWidgetState extends State<ChatBubbleComponentWidget> {
               widget.message,
               'message',
             ),
-            style: FlutterFlowTheme.of(context).bodyMedium,
+            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                  fontFamily: 'Inter',
+                  letterSpacing: 0.0,
+                ),
           ),
         ),
       ),

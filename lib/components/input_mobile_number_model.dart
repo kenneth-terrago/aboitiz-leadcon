@@ -10,8 +10,6 @@ class InputMobileNumberModel extends FlutterFlowModel<InputMobileNumberWidget> {
   TextEditingController? mobileNumberController;
   String? Function(BuildContext, String?)? mobileNumberControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -20,8 +18,4 @@ class InputMobileNumberModel extends FlutterFlowModel<InputMobileNumberWidget> {
     mobileNumberFocusNode?.dispose();
     mobileNumberController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

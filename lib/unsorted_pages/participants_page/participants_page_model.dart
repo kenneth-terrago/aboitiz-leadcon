@@ -34,8 +34,6 @@ class ParticipantsPageModel extends FlutterFlowModel<ParticipantsPageWidget> {
   // Stores action output result for [Bottom Sheet - FilterBottomSheet] action in filterIcon widget.
   String? filterItem1;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -45,8 +43,4 @@ class ParticipantsPageModel extends FlutterFlowModel<ParticipantsPageWidget> {
     searchTextFieldFocusNode?.dispose();
     searchTextFieldController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

@@ -57,6 +57,7 @@ class _PrimaryButton2LcWidgetState extends State<PrimaryButton2LcWidget> {
         textStyle: FlutterFlowTheme.of(context).titleSmall.override(
               fontFamily: 'Inter',
               color: Colors.white,
+              letterSpacing: 0.0,
               fontWeight: FontWeight.bold,
             ),
         elevation: 2.0,

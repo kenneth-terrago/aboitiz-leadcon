@@ -62,7 +62,10 @@ class _NewUpdatePageWidgetState extends State<NewUpdatePageWidget> {
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
                     'New version available',
-                    style: FlutterFlowTheme.of(context).displaySmall,
+                    style: FlutterFlowTheme.of(context).displaySmall.override(
+                          fontFamily: 'Inter',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ),
                 Align(
@@ -73,7 +76,10 @@ class _NewUpdatePageWidgetState extends State<NewUpdatePageWidget> {
                     child: Text(
                       'There is a new available version. Please update to continue using the app.',
                       textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            letterSpacing: 0.0,
+                          ),
                     ),
                   ),
                 ),
@@ -96,6 +102,7 @@ class _NewUpdatePageWidgetState extends State<NewUpdatePageWidget> {
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Inter',
                                 color: Colors.white,
+                                letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
                       borderSide: const BorderSide(

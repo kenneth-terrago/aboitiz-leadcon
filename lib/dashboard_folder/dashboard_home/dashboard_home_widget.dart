@@ -150,6 +150,7 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                               .override(
                                                 fontFamily: 'Inter',
                                                 fontSize: 12.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                         ),
@@ -160,6 +161,7 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                               .override(
                                                 fontFamily: 'Inter',
                                                 fontSize: 16.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -257,6 +259,7 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -289,6 +292,7 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                                                   .of(context)
                                                               .primary,
                                                           fontSize: 12.0,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                 elevation: 4.0,
                                                 borderSide: const BorderSide(
@@ -570,28 +574,31 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                         ),
                                       ),
                                     ),
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        context.pushNamed('feedbackPage');
-                                      },
-                                      child: wrapWithModel(
-                                        model: _model.featureCardModel5,
-                                        updateCallback: () => setState(() {}),
-                                        child: FeatureCardWidget(
-                                          featureIcon: Icon(
-                                            Icons.content_paste_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 32.0,
+                                    if (getRemoteConfigBool(
+                                        'feedbackVisibility'))
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed('feedbackPage');
+                                        },
+                                        child: wrapWithModel(
+                                          model: _model.featureCardModel5,
+                                          updateCallback: () => setState(() {}),
+                                          child: FeatureCardWidget(
+                                            featureIcon: Icon(
+                                              Icons.content_paste_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 32.0,
+                                            ),
+                                            featureText: 'Feedback',
                                           ),
-                                          featureText: 'Feedback',
                                         ),
                                       ),
-                                    ),
                                   ],
                                 ),
                               ),
@@ -611,6 +618,7 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                           .bodySmall
                                           .override(
                                             fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
@@ -645,6 +653,7 @@ class _DashboardHomeWidgetState extends State<DashboardHomeWidget> {
                                             .override(
                                               fontFamily: 'Inter',
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                       ),

@@ -90,6 +90,7 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: const [],
@@ -204,6 +205,7 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 24.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.bold,
                                           ),
                                     ),
@@ -233,6 +235,7 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 14.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                               lineHeight: 2.0,
                                             ),
@@ -481,6 +484,7 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                                                           context)
                                                       .primaryText,
                                                   fontSize: 20.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -590,6 +594,8 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                                                                 fontFamily:
                                                                     'Inter',
                                                                 fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
@@ -606,6 +612,8 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                                                               fontFamily:
                                                                   'Inter',
                                                               fontSize: 12.0,
+                                                              letterSpacing:
+                                                                  0.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal,
@@ -675,6 +683,7 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                                                           context)
                                                       .primaryText,
                                                   fontSize: 20.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
                                           ),
@@ -766,6 +775,7 @@ class _SbuDetailsWidgetState extends State<SbuDetailsWidget> {
                                                           color:
                                                               const Color(0xFF4545FF),
                                                           fontSize: 16.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                           decoration:

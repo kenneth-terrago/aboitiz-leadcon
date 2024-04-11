@@ -95,6 +95,7 @@ class _RegisterModalWidgetState extends State<RegisterModalWidget> {
                                   .override(
                                     fontFamily: 'Inter',
                                     fontSize: 16.0,
+                                    letterSpacing: 0.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),
@@ -115,6 +116,7 @@ class _RegisterModalWidgetState extends State<RegisterModalWidget> {
                                     .override(
                                       fontFamily: 'Inter',
                                       fontSize: 14.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),

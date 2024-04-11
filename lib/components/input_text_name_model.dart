@@ -14,8 +14,6 @@ class InputTextNameModel extends FlutterFlowModel<InputTextNameWidget> {
   TextEditingController? nameController;
   String? Function(BuildContext, String?)? nameControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -24,8 +22,4 @@ class InputTextNameModel extends FlutterFlowModel<InputTextNameWidget> {
     nameFocusNode?.dispose();
     nameController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

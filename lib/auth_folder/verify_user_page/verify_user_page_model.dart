@@ -82,8 +82,6 @@ class VerifyUserPageModel extends FlutterFlowModel<VerifyUserPageWidget> {
   // Stores action output result for [Backend Call - API (Send Email OTP)] action in verifyEmailAddressButton widget.
   ApiCallResponse? emailOtpResponse1;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     mobileNumberTextfieldControllerValidator =
@@ -101,8 +99,4 @@ class VerifyUserPageModel extends FlutterFlowModel<VerifyUserPageWidget> {
     emailAddressTextfieldFocusNode?.dispose();
     emailAddressTextfieldController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

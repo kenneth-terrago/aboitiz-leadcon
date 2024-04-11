@@ -58,6 +58,7 @@ class _ChipWidgetState extends State<ChipWidget> {
                 fontFamily: 'Inter',
                 color: FlutterFlowTheme.of(context).primaryBtnText,
                 fontSize: 12.0,
+                letterSpacing: 0.0,
               ),
         ),
       ),

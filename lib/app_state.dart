@@ -28,6 +28,10 @@ class FFAppState extends ChangeNotifier {
           (await secureStorage.getString('ff_authenticatedUser'))?.ref ??
               _authenticatedUser;
     });
+    await _safeInitAsync(() async {
+      _appVersion =
+          await secureStorage.getString('ff_appVersion') ?? _appVersion;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -59,6 +63,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteAuthenticatedUser() {
     secureStorage.delete(key: 'ff_authenticatedUser');
+  }
+
+  String _appVersion = '';
+  String get appVersion => _appVersion;
+  set appVersion(String value) {
+    _appVersion = value;
+    secureStorage.setString('ff_appVersion', value);
+  }
+
+  void deleteAppVersion() {
+    secureStorage.delete(key: 'ff_appVersion');
   }
 }
 

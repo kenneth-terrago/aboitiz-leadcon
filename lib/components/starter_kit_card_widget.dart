@@ -126,6 +126,7 @@ class _StarterKitCardWidgetState extends State<StarterKitCardWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 fontSize: 14.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                         ),
@@ -150,6 +151,7 @@ class _StarterKitCardWidgetState extends State<StarterKitCardWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 12.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                       ),

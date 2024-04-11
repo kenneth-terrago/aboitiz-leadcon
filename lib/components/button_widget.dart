@@ -58,6 +58,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
               fontFamily: 'Inter',
               color: FlutterFlowTheme.of(context).primary,
               fontSize: 12.0,
+              letterSpacing: 0.0,
               fontWeight: FontWeight.w500,
             ),
         elevation: 4.0,

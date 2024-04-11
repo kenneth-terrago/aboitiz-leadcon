@@ -108,6 +108,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                     fontFamily: 'Inter',
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 16.0,
+                    letterSpacing: 0.0,
                   ),
             ),
             actions: const [],
@@ -171,7 +172,12 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                   '900 000 0000',
                                 ),
                                 textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                             ],
                           ),
@@ -199,11 +205,17 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                   )
                                 ],
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               textAlign: TextAlign.center,
                             ),
@@ -285,6 +297,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                             ),
                                             duration:
@@ -310,6 +323,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                           duration:
@@ -387,6 +401,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                             ),
                                             duration:
@@ -412,6 +427,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                           duration:
@@ -441,6 +457,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       fontSize: 14.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                     ),
                               ),
@@ -455,11 +472,17 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
                                   )
                                 ],
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               textAlign: TextAlign.center,
                             ),
@@ -485,6 +508,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                     fontFamily: 'Inter',
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ],
@@ -510,6 +534,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                             fontFamily: 'Inter',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
                                     ),
                                     duration: const Duration(milliseconds: 4000),
@@ -617,6 +642,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .primaryBackground,
+                                                        letterSpacing: 0.0,
                                                       ),
                                             ),
                                             duration:
@@ -649,6 +675,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                           duration:
@@ -738,6 +765,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                           duration:
@@ -839,6 +867,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
                                   .override(
                                     fontFamily: 'Inter',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
                               borderSide: const BorderSide(

@@ -10,8 +10,6 @@ class SearchField2Model extends FlutterFlowModel<SearchField2Widget> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -20,8 +18,4 @@ class SearchField2Model extends FlutterFlowModel<SearchField2Widget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

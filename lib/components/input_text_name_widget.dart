@@ -51,6 +51,7 @@ class _InputTextNameWidgetState extends State<InputTextNameWidget> {
       child: TextFormField(
         controller: _model.nameController,
         focusNode: _model.nameFocusNode,
+        autofocus: false,
         textCapitalization: TextCapitalization.words,
         obscureText: false,
         decoration: InputDecoration(
@@ -61,6 +62,7 @@ class _InputTextNameWidgetState extends State<InputTextNameWidget> {
           labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                 fontFamily: 'Inter',
                 color: FlutterFlowTheme.of(context).secondaryText,
+                letterSpacing: 0.0,
               ),
           hintText: widget.hintText,
           enabledBorder: OutlineInputBorder(
@@ -92,7 +94,11 @@ class _InputTextNameWidgetState extends State<InputTextNameWidget> {
             borderRadius: BorderRadius.circular(6.0),
           ),
         ),
-        style: FlutterFlowTheme.of(context).bodyMedium,
+        style: FlutterFlowTheme.of(context).bodyMedium.override(
+              fontFamily: 'Inter',
+              letterSpacing: 0.0,
+            ),
+        minLines: null,
         keyboardType: TextInputType.name,
         validator: _model.nameControllerValidator.asValidator(context),
       ),

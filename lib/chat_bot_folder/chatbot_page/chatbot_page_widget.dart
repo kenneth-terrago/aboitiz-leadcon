@@ -63,6 +63,7 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
                   fontFamily: 'Inter',
                   color: FlutterFlowTheme.of(context).primaryText,
                   fontSize: 16.0,
+                  letterSpacing: 0.0,
                 ),
           ),
           actions: const [],

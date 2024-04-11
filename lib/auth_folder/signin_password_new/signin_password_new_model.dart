@@ -14,8 +14,6 @@ class SigninPasswordNewModel extends FlutterFlowModel<SigninPasswordNewWidget> {
   // Model for inputPassword component.
   late InputPasswordModel inputPasswordModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     inputEmailModel = createModel(context, () => InputEmailModel());
@@ -28,8 +26,4 @@ class SigninPasswordNewModel extends FlutterFlowModel<SigninPasswordNewWidget> {
     inputEmailModel.dispose();
     inputPasswordModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

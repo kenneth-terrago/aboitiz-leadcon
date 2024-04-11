@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'force_update_page_model.dart';
 export 'force_update_page_model.dart';
 
@@ -34,6 +35,8 @@ class _ForceUpdatePageWidgetState extends State<ForceUpdatePageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -57,31 +60,39 @@ class _ForceUpdatePageWidgetState extends State<ForceUpdatePageWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    const Spacer(),
                     SvgPicture.asset(
                       'assets/images/ForceUpdate.svg',
                       width: 160.0,
                       height: 200.0,
                       fit: BoxFit.fitHeight,
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 0.0),
-                          child: Text(
-                            'Time to update!',
-                            style: GoogleFonts.getFont(
-                              'Inter',
-                              color: FlutterFlowTheme.of(context).primaryText,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
-                            ),
-                          ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        child: Text(
+                          'v${getRemoteConfigString('requiredMinimumVersion')}',
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
-                      ],
+                      ),
+                    ),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Text(
+                        'New Version Available',
+                        style: GoogleFonts.getFont(
+                          'Inter',
+                          color: FlutterFlowTheme.of(context).primaryText,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0,
+                        ),
+                      ),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -139,6 +150,7 @@ class _ForceUpdatePageWidgetState extends State<ForceUpdatePageWidget> {
                                   .override(
                                     fontFamily: 'Inter',
                                     color: Colors.white,
+                                    letterSpacing: 0.0,
                                   ),
                               elevation: 3.0,
                               borderSide: const BorderSide(
@@ -166,6 +178,7 @@ class _ForceUpdatePageWidgetState extends State<ForceUpdatePageWidget> {
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                       ),
@@ -178,8 +191,12 @@ class _ForceUpdatePageWidgetState extends State<ForceUpdatePageWidget> {
                                         ),
                                       )
                                     ],
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
@@ -187,6 +204,22 @@ class _ForceUpdatePageWidgetState extends State<ForceUpdatePageWidget> {
                             ),
                           ),
                         ],
+                      ),
+                    ),
+                    const Spacer(),
+                    Align(
+                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                        child: Text(
+                          'Current Version - v${FFAppState().appVersion}',
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
                       ),
                     ),
                   ],

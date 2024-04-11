@@ -93,6 +93,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                     fontFamily: 'Inter',
                     color: FlutterFlowTheme.of(context).primaryText,
                     fontSize: 16.0,
+                    letterSpacing: 0.0,
                     fontWeight: FontWeight.w600,
                   ),
             ),
@@ -196,17 +197,24 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   focusNode: _model
                                                       .fullNameTextFieldSMSFocusNode,
+                                                  autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Full name',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
-                                                    hintStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
@@ -262,7 +270,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   validator: _model
                                                       .fullNameTextFieldSMSControllerValidator
                                                       .asValidator(context),
@@ -282,14 +295,18 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   focusNode: _model
                                                       .mobileNumberTextFieldSMSFocusNode,
+                                                  autofocus: false,
                                                   readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Mobile number',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText:
                                                         '+63 900 000 0000',
                                                     enabledBorder:
@@ -347,7 +364,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   keyboardType:
                                                       TextInputType.phone,
                                                   validator: _model
@@ -369,14 +391,18 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   focusNode: _model
                                                       .workEmailTextFieldSMSFocusNode,
+                                                  autofocus: false,
                                                   readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Work email',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText:
                                                         'someone@example.com',
                                                     enabledBorder:
@@ -434,7 +460,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   keyboardType: TextInputType
                                                       .emailAddress,
                                                   validator: _model
@@ -456,13 +487,17 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   focusNode: _model
                                                       .positionTitleTextFieldSMSFocusNode,
+                                                  autofocus: false,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Position title',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
@@ -518,7 +553,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   validator: _model
                                                       .positionTitleTextFieldSMSControllerValidator
                                                       .asValidator(context),
@@ -583,7 +623,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Strategic Business Unit',
                                                       icon: Icon(
@@ -628,7 +674,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                     List<BusRecord>>(
                                                   stream: queryBusRecord(
                                                     queryBuilder: (busRecord) =>
-                                                        busRecord.orderBy('id'),
+                                                        busRecord.orderBy('bu'),
                                                   ),
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
@@ -676,7 +722,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Business Unit',
                                                       icon: Icon(
@@ -723,7 +775,7 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                     queryBuilder:
                                                         (csusRecord) =>
                                                             csusRecord
-                                                                .orderBy('id'),
+                                                                .orderBy('csu'),
                                                   ),
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
@@ -771,7 +823,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Corporate Service Unit',
                                                       icon: Icon(
@@ -818,7 +876,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                     queryBuilder:
                                                         (levelsRecord) =>
                                                             levelsRecord
-                                                                .orderBy('id'),
+                                                                .orderBy(
+                                                                    'level'),
                                                   ),
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
@@ -867,7 +926,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Level',
                                                       icon: Icon(
@@ -1009,6 +1074,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Inter',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.normal,
                                                                         ),
@@ -1024,6 +1091,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                               'Inter',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -1046,6 +1115,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Inter',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.normal,
                                                                         ),
@@ -1053,7 +1124,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                 ],
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium,
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
                                                               ),
                                                             ),
                                                           ),
@@ -1098,6 +1175,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                             'Inter',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 duration: const Duration(
@@ -1128,6 +1207,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                             'Inter',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 duration: const Duration(
@@ -1158,6 +1239,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                             'Inter',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 duration: const Duration(
@@ -1188,6 +1271,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                             'Inter',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 duration: const Duration(
@@ -1323,6 +1408,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                             FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 duration: const Duration(
@@ -1374,6 +1461,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                         'Inter',
                                                                     color: Colors
                                                                         .white,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
@@ -1471,14 +1560,20 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Full name',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
-                                                    hintStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
@@ -1534,7 +1629,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   validator: _model
                                                       .fullNameTextFieldEmailControllerValidator
                                                       .asValidator(context),
@@ -1559,10 +1659,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Mobile number',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText:
                                                         '+63 900 000 0000',
                                                     enabledBorder:
@@ -1620,7 +1723,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   keyboardType:
                                                       TextInputType.phone,
                                                   validator: _model
@@ -1647,10 +1755,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Work email',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     hintText:
                                                         'someone@example.com',
                                                     enabledBorder:
@@ -1708,7 +1819,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   keyboardType: TextInputType
                                                       .emailAddress,
                                                   validator: _model
@@ -1734,10 +1850,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Position title',
-                                                    labelStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
                                                       borderSide: BorderSide(
@@ -1793,7 +1912,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  minLines: null,
                                                   validator: _model
                                                       .positionTitleTextFieldEmailControllerValidator
                                                       .asValidator(context),
@@ -1858,7 +1982,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Strategic Business Unit',
                                                       icon: Icon(
@@ -1951,7 +2081,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Business Unit',
                                                       icon: Icon(
@@ -2046,7 +2182,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Corporate Service Unit',
                                                       icon: Icon(
@@ -2142,7 +2284,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintText:
                                                           'Select your Level',
                                                       icon: Icon(
@@ -2284,6 +2432,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Inter',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.normal,
                                                                         ),
@@ -2299,6 +2449,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                               'Inter',
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w500,
                                                                         ),
@@ -2321,6 +2473,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                         .override(
                                                                           fontFamily:
                                                                               'Inter',
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.normal,
                                                                         ),
@@ -2328,7 +2482,13 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                 ],
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyMedium,
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
                                                               ),
                                                             ),
                                                           ),
@@ -2478,6 +2638,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                             FlutterFlowTheme.of(context).bodyLargeFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                 ),
                                                                 duration: const Duration(
@@ -2529,6 +2691,8 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                         'Inter',
                                                                     color: Colors
                                                                         .white,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:

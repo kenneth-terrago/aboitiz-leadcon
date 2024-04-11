@@ -61,6 +61,7 @@ class _ButtonWithIconWidgetState extends State<ButtonWithIconWidget> {
               fontFamily: 'Inter',
               color: FlutterFlowTheme.of(context).primary,
               fontSize: 16.0,
+              letterSpacing: 0.0,
               fontWeight: FontWeight.w500,
             ),
         borderSide: BorderSide(

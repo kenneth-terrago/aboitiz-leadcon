@@ -9,8 +9,6 @@ class OfflineStateModel extends FlutterFlowModel<OfflineStateWidget> {
   // Model for primaryButton2 component.
   late PrimaryButton2Model primaryButton2Model;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     primaryButton2Model = createModel(context, () => PrimaryButton2Model());
@@ -20,8 +18,4 @@ class OfflineStateModel extends FlutterFlowModel<OfflineStateWidget> {
   void dispose() {
     primaryButton2Model.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

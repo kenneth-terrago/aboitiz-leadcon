@@ -49,7 +49,10 @@ class _FeatureCardWidgetState extends State<FeatureCardWidget> {
           BoxShadow(
             blurRadius: 6.0,
             color: Color(0x1E00230B),
-            offset: Offset(0.0, 4.0),
+            offset: Offset(
+              0.0,
+              4.0,
+            ),
             spreadRadius: 1.0,
           )
         ],
@@ -68,6 +71,7 @@ class _FeatureCardWidgetState extends State<FeatureCardWidget> {
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Inter',
                     fontSize: 12.0,
+                    letterSpacing: 0.0,
                   ),
             ),
           ),

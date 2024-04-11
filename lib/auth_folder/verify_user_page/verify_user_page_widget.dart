@@ -142,55 +142,92 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 5.0, 0.0),
-                                            child: FlutterFlowDropDown<String>(
-                                              controller: _model
-                                                      .countryCodeDropdownValueController ??=
-                                                  FormFieldController<String>(
-                                                _model.countryCodeDropdownValue ??=
-                                                    '+63',
+                                            child: StreamBuilder<
+                                                List<CountryCodesRecord>>(
+                                              stream: queryCountryCodesRecord(
+                                                queryBuilder:
+                                                    (countryCodesRecord) =>
+                                                        countryCodesRecord
+                                                            .orderBy(
+                                                                'country_code'),
                                               ),
-                                              options: const [
-                                                '+1',
-                                                '+63',
-                                                '+86',
-                                                '+44',
-                                                '+91',
-                                                '+49',
-                                                '+81',
-                                                '+82',
-                                                '+33',
-                                                '+61'
-                                              ],
-                                              onChanged: (val) => setState(() =>
-                                                  _model.countryCodeDropdownValue =
-                                                      val),
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                              icon: Icon(
-                                                Icons
-                                                    .keyboard_arrow_down_rounded,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50.0,
+                                                      height: 50.0,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        valueColor:
+                                                            AlwaysStoppedAnimation<
+                                                                Color>(
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                List<CountryCodesRecord>
+                                                    countryCodeDropdownCountryCodesRecordList =
+                                                    snapshot.data!;
+                                                return FlutterFlowDropDown<
+                                                    String>(
+                                                  controller: _model
+                                                          .countryCodeDropdownValueController ??=
+                                                      FormFieldController<
+                                                          String>(
+                                                    _model.countryCodeDropdownValue ??=
+                                                        '+63',
+                                                  ),
+                                                  options:
+                                                      countryCodeDropdownCountryCodesRecordList
+                                                          .map((e) =>
+                                                              e.countryCode)
+                                                          .toList(),
+                                                  onChanged: (val) => setState(
+                                                      () => _model
+                                                              .countryCodeDropdownValue =
+                                                          val),
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
+                                                  icon: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_down_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
                                                         .secondaryText,
-                                                size: 24.0,
-                                              ),
-                                              fillColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              elevation: 2.0,
-                                              borderColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              borderWidth: 1.0,
-                                              borderRadius: 6.0,
-                                              margin: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 5.0, 0.0),
-                                              hidesUnderline: true,
-                                              isOverButton: false,
-                                              isSearchable: false,
-                                              isMultiSelect: false,
+                                                    size: 24.0,
+                                                  ),
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryBackground,
+                                                  elevation: 2.0,
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryText,
+                                                  borderWidth: 1.0,
+                                                  borderRadius: 6.0,
+                                                  margin: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 5.0, 0.0),
+                                                  hidesUnderline: true,
+                                                  isOverButton: false,
+                                                  isSearchable: false,
+                                                  isMultiSelect: false,
+                                                );
+                                              },
                                             ),
                                           ),
                                         ),
@@ -201,8 +238,10 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                 .mobileNumberTextfieldController,
                                             focusNode: _model
                                                 .mobileNumberTextfieldFocusNode,
+                                            autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
+                                              isDense: false,
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -212,6 +251,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .secondaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                               hintText: 'e.g. 9123456789',
                                               hintStyle:
@@ -223,6 +263,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .textDark64,
+                                                        letterSpacing: 0.0,
                                                       ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -267,7 +308,12 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               ),
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            minLines: null,
                                             keyboardType: TextInputType.phone,
                                             validator: _model
                                                 .mobileNumberTextfieldControllerValidator
@@ -316,6 +362,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                           ),
@@ -340,6 +387,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         fontSize: 14.0,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                 ),
                                                 textAlign: TextAlign.center,
@@ -460,6 +508,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -582,6 +631,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                     ),
                                                     duration: const Duration(
@@ -615,6 +666,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -651,6 +703,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .override(
                                                     fontFamily: 'Inter',
                                                     color: Colors.white,
+                                                    letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
                                           borderSide: const BorderSide(
@@ -687,6 +740,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                               .emailAddressTextfieldController,
                                           focusNode: _model
                                               .emailAddressTextfieldFocusNode,
+                                          autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelStyle:
@@ -698,6 +752,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             hintText: 'Delegate email address',
                                             hintStyle:
@@ -709,6 +764,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .textDark64,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -753,7 +809,12 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
+                                          minLines: null,
                                           validator: _model
                                               .emailAddressTextfieldControllerValidator
                                               .asValidator(context),
@@ -800,6 +861,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryText,
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                           ),
@@ -820,7 +882,11 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   ],
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                                 textAlign: TextAlign.center,
                                               ),
@@ -940,6 +1006,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -1061,6 +1128,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                     ),
                                                     duration: const Duration(
@@ -1094,6 +1163,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryBackground,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -1130,6 +1200,7 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   .override(
                                                     fontFamily: 'Inter',
                                                     color: Colors.white,
+                                                    letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
                                           borderSide: const BorderSide(

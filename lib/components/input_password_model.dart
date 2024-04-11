@@ -15,8 +15,6 @@ class InputPasswordModel extends FlutterFlowModel<InputPasswordWidget> {
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
@@ -27,8 +25,4 @@ class InputPasswordModel extends FlutterFlowModel<InputPasswordWidget> {
     passwordFocusNode?.dispose();
     passwordController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

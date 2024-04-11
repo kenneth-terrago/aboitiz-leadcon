@@ -104,6 +104,7 @@ class _NewsCardWidgetState extends State<NewsCardWidget> {
                         style: FlutterFlowTheme.of(context).bodySmall.override(
                               fontFamily: 'Inter',
                               fontSize: 12.0,
+                              letterSpacing: 0.0,
                               fontWeight: FontWeight.normal,
                             ),
                       ),
@@ -135,6 +136,7 @@ class _NewsCardWidgetState extends State<NewsCardWidget> {
                               .override(
                                 fontFamily: 'Inter',
                                 fontSize: 14.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
                               ),
                         ),
@@ -161,6 +163,7 @@ class _NewsCardWidgetState extends State<NewsCardWidget> {
                               .override(
                                 fontFamily: 'Inter',
                                 fontSize: 12.0,
+                                letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
                         ),

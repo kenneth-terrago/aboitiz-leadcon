@@ -190,6 +190,7 @@ class _SigninPasswordNewWidgetState extends State<SigninPasswordNewWidget> {
                                           .override(
                                             fontFamily: 'Inter',
                                             color: Colors.white,
+                                            letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
                                       borderSide: const BorderSide(
@@ -219,6 +220,7 @@ class _SigninPasswordNewWidgetState extends State<SigninPasswordNewWidget> {
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
@@ -234,7 +236,11 @@ class _SigninPasswordNewWidgetState extends State<SigninPasswordNewWidget> {
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         textAlign: TextAlign.center,
                                       ),

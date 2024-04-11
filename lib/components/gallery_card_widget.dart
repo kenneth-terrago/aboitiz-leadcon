@@ -86,6 +86,7 @@ class _GalleryCardWidgetState extends State<GalleryCardWidget> {
                             fontFamily: 'Inter',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 16.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.bold,
                           ),
                     ),

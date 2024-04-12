@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class VerifyUserPageModel extends FlutterFlowModel<VerifyUserPageWidget> {
   ///  Local state fields for this page.
 
-  bool isSMSOTP = true;
+  bool isSMSOTP = false;
 
   ///  State fields for stateful widgets in this page.
 

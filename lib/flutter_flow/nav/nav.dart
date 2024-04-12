@@ -298,6 +298,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'newUpdatePage',
           path: '/newUpdatePage',
           builder: (context, params) => const NewUpdatePageWidget(),
+        ),
+        FFRoute(
+          name: 'webPage',
+          path: '/webPage',
+          builder: (context, params) => WebPageWidget(
+            link: params.getParam(
+              'link',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

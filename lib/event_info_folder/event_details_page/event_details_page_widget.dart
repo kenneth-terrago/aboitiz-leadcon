@@ -1,11 +1,8 @@
 import '/backend/backend.dart';
-import '/components/copy_modal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'event_details_page_model.dart';
 export 'event_details_page_model.dart';
 
@@ -170,294 +167,162 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                             color:
                                 FlutterFlowTheme.of(context).primaryBackground,
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 24.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                if (containerStarterKitRecord
+                                        ?.shortDescription !=
+                                    '')
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 24.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.stretch,
-                                      children: [
-                                        if (containerStarterKitRecord
-                                                ?.shortDescription !=
-                                            '')
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 12.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                containerStarterKitRecord
-                                                    ?.shortDescription,
-                                                '[short_description]',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
-                                            ),
+                                        0.0, 0.0, 0.0, 12.0),
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        containerStarterKitRecord
+                                            ?.shortDescription,
+                                        '[short_description]',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
                                           ),
-                                        if (containerStarterKitRecord
-                                                ?.description !=
-                                            '')
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 12.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                containerStarterKitRecord
-                                                    ?.description,
-                                                '[description]',
-                                              ),
+                                    ),
+                                  ),
+                                if (containerStarterKitRecord?.description !=
+                                    '')
+                                  Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 12.0),
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        containerStarterKitRecord?.description,
+                                        '[description]',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            lineHeight: 2.0,
+                                          ),
+                                    ),
+                                  ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    if (containerStarterKitRecord?.link != '')
+                                      RichText(
+                                        textScaler:
+                                            MediaQuery.of(context).textScaler,
+                                        text: TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: 'Direction map: ',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily: 'Inter',
-                                                        fontSize: 16.0,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.normal,
-                                                        lineHeight: 2.0,
                                                       ),
-                                            ),
-                                          ),
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            if (containerStarterKitRecord
-                                                    ?.link !=
-                                                '')
-                                              RichText(
-                                                textScaler:
-                                                    MediaQuery.of(context)
-                                                        .textScaler,
-                                                text: TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                      text: 'Direction map: ',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                          ),
-                                                    )
-                                                  ],
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            if (containerStarterKitRecord
-                                                    ?.link !=
-                                                '')
-                                              Builder(
-                                                builder: (context) => InkWell(
-                                                  splashColor:
-                                                      Colors.transparent,
-                                                  focusColor:
-                                                      Colors.transparent,
-                                                  hoverColor:
-                                                      Colors.transparent,
-                                                  highlightColor:
-                                                      Colors.transparent,
-                                                  onTap: () async {
-                                                    await Clipboard.setData(
-                                                        const ClipboardData(
-                                                            text:
-                                                                'https://maps.app.goo.gl/6qNxC64eJijYkAbm6'));
-                                                    await showDialog(
-                                                      context: context,
-                                                      builder: (dialogContext) {
-                                                        return Dialog(
-                                                          elevation: 0,
-                                                          insetPadding:
-                                                              EdgeInsets.zero,
-                                                          backgroundColor:
-                                                              Colors
-                                                                  .transparent,
-                                                          alignment: const AlignmentDirectional(
-                                                                  0.0, 0.0)
-                                                              .resolve(
-                                                                  Directionality.of(
-                                                                      context)),
-                                                          child: WebViewAware(
-                                                            child:
-                                                                GestureDetector(
-                                                              onTap: () => _model
-                                                                      .unfocusNode
-                                                                      .canRequestFocus
-                                                                  ? FocusScope.of(
-                                                                          context)
-                                                                      .requestFocus(
-                                                                          _model
-                                                                              .unfocusNode)
-                                                                  : FocusScope.of(
-                                                                          context)
-                                                                      .unfocus(),
-                                                              child:
-                                                                  const CopyModalWidget(
-                                                                modalText:
-                                                                    'Link Copied!',
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        );
-                                                      },
-                                                    ).then((value) =>
-                                                        setState(() {}));
-                                                  },
-                                                  child: RichText(
-                                                    textScaler:
-                                                        MediaQuery.of(context)
-                                                            .textScaler,
-                                                    text: TextSpan(
-                                                      children: [
-                                                        TextSpan(
-                                                          text:
-                                                              'Google Maps Link',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                                decoration:
-                                                                    TextDecoration
-                                                                        .underline,
-                                                              ),
-                                                        )
-                                                      ],
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily: 'Inter',
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            if (containerStarterKitRecord
-                                                    ?.link !=
-                                                '')
-                                              Builder(
-                                                builder: (context) => Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          5.0, 0.0, 0.0, 0.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      await Clipboard.setData(
-                                                          const ClipboardData(
-                                                              text:
-                                                                  'https://maps.app.goo.gl/6qNxC64eJijYkAbm6'));
-                                                      await showDialog(
-                                                        context: context,
-                                                        builder:
-                                                            (dialogContext) {
-                                                          return Dialog(
-                                                            elevation: 0,
-                                                            insetPadding:
-                                                                EdgeInsets.zero,
-                                                            backgroundColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            alignment: const AlignmentDirectional(
-                                                                    0.0, 0.0)
-                                                                .resolve(
-                                                                    Directionality.of(
-                                                                        context)),
-                                                            child: WebViewAware(
-                                                              child:
-                                                                  GestureDetector(
-                                                                onTap: () => _model
-                                                                        .unfocusNode
-                                                                        .canRequestFocus
-                                                                    ? FocusScope.of(
-                                                                            context)
-                                                                        .requestFocus(_model
-                                                                            .unfocusNode)
-                                                                    : FocusScope.of(
-                                                                            context)
-                                                                        .unfocus(),
-                                                                child:
-                                                                    const CopyModalWidget(
-                                                                  modalText:
-                                                                      'Link Copied!',
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                      ).then((value) =>
-                                                          setState(() {}));
-                                                    },
-                                                    child: Icon(
-                                                      Icons
-                                                          .content_copy_rounded,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .info,
-                                                      size: 20.0,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
+                                            )
                                           ],
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ].addToEnd(const SizedBox(height: 105.0)),
+                                      ),
+                                    if (containerStarterKitRecord?.link != '')
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await launchURL(
+                                              containerStarterKitRecord!.link);
+                                        },
+                                        child: RichText(
+                                          textScaler:
+                                              MediaQuery.of(context).textScaler,
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: 'Google Maps Link',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .info,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          decoration:
+                                                              TextDecoration
+                                                                  .underline,
+                                                        ),
+                                              )
+                                            ],
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    if (containerStarterKitRecord?.link != '')
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            5.0, 0.0, 0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            await launchURL(
+                                                containerStarterKitRecord!
+                                                    .link);
+                                          },
+                                          child: Icon(
+                                            Icons.pin_drop_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .info,
+                                            size: 20.0,
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),

@@ -47,3 +47,4 @@ export '/unsorted_pages/initial_loading_page/initial_loading_page_widget.dart'
     show InitialLoadingPageWidget;
 export '/unsorted_pages/new_update_page/new_update_page_widget.dart'
     show NewUpdatePageWidget;
+export '/unsorted_pages/web_page/web_page_widget.dart' show WebPageWidget;

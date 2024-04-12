@@ -32,6 +32,18 @@ class FFAppState extends ChangeNotifier {
       _appVersion =
           await secureStorage.getString('ff_appVersion') ?? _appVersion;
     });
+    await _safeInitAsync(() async {
+      _chatMessages =
+          (await secureStorage.getStringList('ff_chatMessages'))?.map((x) {
+                try {
+                  return jsonDecode(x);
+                } catch (e) {
+                  print("Can't decode persisted json. Error: $e.");
+                  return {};
+                }
+              }).toList() ??
+              _chatMessages;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -74,6 +86,51 @@ class FFAppState extends ChangeNotifier {
 
   void deleteAppVersion() {
     secureStorage.delete(key: 'ff_appVersion');
+  }
+
+  List<dynamic> _chatMessages = [];
+  List<dynamic> get chatMessages => _chatMessages;
+  set chatMessages(List<dynamic> value) {
+    _chatMessages = value;
+    secureStorage.setStringList(
+        'ff_chatMessages', value.map((x) => jsonEncode(x)).toList());
+  }
+
+  void deleteChatMessages() {
+    secureStorage.delete(key: 'ff_chatMessages');
+  }
+
+  void addToChatMessages(dynamic value) {
+    _chatMessages.add(value);
+    secureStorage.setStringList(
+        'ff_chatMessages', _chatMessages.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeFromChatMessages(dynamic value) {
+    _chatMessages.remove(value);
+    secureStorage.setStringList(
+        'ff_chatMessages', _chatMessages.map((x) => jsonEncode(x)).toList());
+  }
+
+  void removeAtIndexFromChatMessages(int index) {
+    _chatMessages.removeAt(index);
+    secureStorage.setStringList(
+        'ff_chatMessages', _chatMessages.map((x) => jsonEncode(x)).toList());
+  }
+
+  void updateChatMessagesAtIndex(
+    int index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _chatMessages[index] = updateFn(_chatMessages[index]);
+    secureStorage.setStringList(
+        'ff_chatMessages', _chatMessages.map((x) => jsonEncode(x)).toList());
+  }
+
+  void insertAtIndexInChatMessages(int index, dynamic value) {
+    _chatMessages.insert(index, value);
+    secureStorage.setStringList(
+        'ff_chatMessages', _chatMessages.map((x) => jsonEncode(x)).toList());
   }
 }
 

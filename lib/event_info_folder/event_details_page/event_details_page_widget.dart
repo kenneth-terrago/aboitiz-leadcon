@@ -178,9 +178,10 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                         ?.shortDescription !=
                                     '')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 12.0),
-                                    child: Text(
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 12.0),
+                                    child: SelectableText(
                                       valueOrDefault<String>(
                                         containerStarterKitRecord
                                             ?.shortDescription,
@@ -199,9 +200,10 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                 if (containerStarterKitRecord?.description !=
                                     '')
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 12.0),
-                                    child: Text(
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 12.0),
+                                    child: SelectableText(
                                       valueOrDefault<String>(
                                         containerStarterKitRecord?.description,
                                         '[description]',
@@ -299,8 +301,8 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                       ),
                                     if (containerStarterKitRecord?.link != '')
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 0.0, 0.0, 0.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                         child: InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,

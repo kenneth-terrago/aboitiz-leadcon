@@ -88,7 +88,9 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_appVersion');
   }
 
-  List<dynamic> _chatMessages = [];
+  List<dynamic> _chatMessages = [
+    jsonDecode('{\"message\":\"test\",\"isUserMessage\":false}')
+  ];
   List<dynamic> get chatMessages => _chatMessages;
   set chatMessages(List<dynamic> value) {
     _chatMessages = value;

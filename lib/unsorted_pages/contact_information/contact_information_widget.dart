@@ -230,7 +230,8 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                             onTap: () async {
                                               await launchUrl(Uri(
                                                 scheme: 'mailto',
-                                                path: 'hello@ubx.ph',
+                                                path:
+                                                    columnSettingsRecord.value,
                                               ));
                                             },
                                             child: RichText(
@@ -251,8 +252,12 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                                     recognizer:
                                                         TapGestureRecognizer()
                                                           ..onTap = () async {
-                                                            await launchURL(
-                                                                'mailto:aparle@ncapec.org');
+                                                            await launchUrl(Uri(
+                                                              scheme: 'mailto',
+                                                              path:
+                                                                  columnSettingsRecord
+                                                                      .value,
+                                                            ));
                                                           },
                                                   )
                                                 ],
@@ -367,7 +372,8 @@ class _ContactInformationWidgetState extends State<ContactInformationWidget> {
                                                 ..onTap = () async {
                                                   await launchUrl(Uri(
                                                     scheme: 'tel',
-                                                    path: '+639123456789',
+                                                    path: columnSettingsRecord
+                                                        .value,
                                                   ));
                                                 },
                                             )

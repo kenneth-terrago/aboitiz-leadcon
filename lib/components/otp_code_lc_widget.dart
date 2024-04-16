@@ -55,6 +55,7 @@ class _OtpCodeLcWidgetState extends State<OtpCodeLcWidget> {
         showCursor: true,
         cursorColor: FlutterFlowTheme.of(context).primary,
         obscureText: false,
+        keyboardType: TextInputType.number,
         pinTheme: PinTheme(
           fieldHeight: 80.0,
           fieldWidth: 48.0,

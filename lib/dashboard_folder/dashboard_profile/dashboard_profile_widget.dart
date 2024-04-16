@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 import 'dashboard_profile_model.dart';
@@ -632,22 +633,61 @@ class _DashboardProfileWidgetState extends State<DashboardProfileWidget> {
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 8.0, 0.0),
-                                          child: Image.asset(
-                                            'assets/images/UBX_Black.png',
-                                            height: 35.8,
-                                            fit: BoxFit.fill,
-                                          ),
+                                    child: StreamBuilder<List<SettingsRecord>>(
+                                      stream: querySettingsRecord(
+                                        queryBuilder: (settingsRecord) =>
+                                            settingsRecord.where(
+                                          'type',
+                                          isEqualTo: 'lottie',
                                         ),
-                                      ],
+                                        singleRecord: true,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<SettingsRecord>
+                                            rowSettingsRecordList =
+                                            snapshot.data!;
+                                        // Return an empty Container when the item does not exist.
+                                        if (snapshot.data!.isEmpty) {
+                                          return Container();
+                                        }
+                                        final rowSettingsRecord =
+                                            rowSettingsRecordList.isNotEmpty
+                                                ? rowSettingsRecordList.first
+                                                : null;
+                                        return Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Lottie.network(
+                                              valueOrDefault<String>(
+                                                rowSettingsRecord?.value,
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/lead-con-aboitiz-application-6vjly1/assets/a1i4vrsxr84s/logogifleadcon.json',
+                                              ),
+                                              height: 40.0,
+                                              fit: BoxFit.fill,
+                                              animate: true,
+                                            ),
+                                          ],
+                                        );
+                                      },
                                     ),
                                   ),
                                   Padding(

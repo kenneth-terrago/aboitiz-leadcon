@@ -90,6 +90,16 @@ class PreregisteredUsersRecord extends FirestoreRecord {
   bool get participantUser => _participantUser ?? false;
   bool hasParticipantUser() => _participantUser != null;
 
+  // "qr_code_image_link" field.
+  String? _qrCodeImageLink;
+  String get qrCodeImageLink => _qrCodeImageLink ?? '';
+  bool hasQrCodeImageLink() => _qrCodeImageLink != null;
+
+  // "qr_code_image_link_string" field.
+  String? _qrCodeImageLinkString;
+  String get qrCodeImageLinkString => _qrCodeImageLinkString ?? '';
+  bool hasQrCodeImageLinkString() => _qrCodeImageLinkString != null;
+
   void _initializeFields() {
     _workEmail = snapshotData['work_email'] as String?;
     _firstName = snapshotData['first_name'] as String?;
@@ -106,6 +116,9 @@ class PreregisteredUsersRecord extends FirestoreRecord {
     _sbuId = snapshotData['sbu_id'] as String?;
     _testUser = snapshotData['test_user'] as bool?;
     _participantUser = snapshotData['participant_user'] as bool?;
+    _qrCodeImageLink = snapshotData['qr_code_image_link'] as String?;
+    _qrCodeImageLinkString =
+        snapshotData['qr_code_image_link_string'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -159,6 +172,8 @@ Map<String, dynamic> createPreregisteredUsersRecordData({
   String? sbuId,
   bool? testUser,
   bool? participantUser,
+  String? qrCodeImageLink,
+  String? qrCodeImageLinkString,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -177,6 +192,8 @@ Map<String, dynamic> createPreregisteredUsersRecordData({
       'sbu_id': sbuId,
       'test_user': testUser,
       'participant_user': participantUser,
+      'qr_code_image_link': qrCodeImageLink,
+      'qr_code_image_link_string': qrCodeImageLinkString,
     }.withoutNulls,
   );
 
@@ -203,7 +220,9 @@ class PreregisteredUsersRecordDocumentEquality
         e1?.corporateServiceUnit == e2?.corporateServiceUnit &&
         e1?.sbuId == e2?.sbuId &&
         e1?.testUser == e2?.testUser &&
-        e1?.participantUser == e2?.participantUser;
+        e1?.participantUser == e2?.participantUser &&
+        e1?.qrCodeImageLink == e2?.qrCodeImageLink &&
+        e1?.qrCodeImageLinkString == e2?.qrCodeImageLinkString;
   }
 
   @override
@@ -222,7 +241,9 @@ class PreregisteredUsersRecordDocumentEquality
         e?.corporateServiceUnit,
         e?.sbuId,
         e?.testUser,
-        e?.participantUser
+        e?.participantUser,
+        e?.qrCodeImageLink,
+        e?.qrCodeImageLinkString
       ]);
 
   @override

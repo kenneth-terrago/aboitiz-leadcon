@@ -85,6 +85,16 @@ class UsersRecord extends FirestoreRecord {
   bool get testUser => _testUser ?? false;
   bool hasTestUser() => _testUser != null;
 
+  // "qr_code_image_link" field.
+  String? _qrCodeImageLink;
+  String get qrCodeImageLink => _qrCodeImageLink ?? '';
+  bool hasQrCodeImageLink() => _qrCodeImageLink != null;
+
+  // "qr_code_image_link_string" field.
+  String? _qrCodeImageLinkString;
+  String get qrCodeImageLinkString => _qrCodeImageLinkString ?? '';
+  bool hasQrCodeImageLinkString() => _qrCodeImageLinkString != null;
+
   void _initializeFields() {
     _firstName = snapshotData['first_name'] as String?;
     _lastName = snapshotData['last_name'] as String?;
@@ -100,6 +110,9 @@ class UsersRecord extends FirestoreRecord {
     _strategicBusinessUnit = snapshotData['strategic_business_unit'] as String?;
     _corporateServiceUnit = snapshotData['corporate_service_unit'] as String?;
     _testUser = snapshotData['test_user'] as bool?;
+    _qrCodeImageLink = snapshotData['qr_code_image_link'] as String?;
+    _qrCodeImageLinkString =
+        snapshotData['qr_code_image_link_string'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -150,6 +163,8 @@ Map<String, dynamic> createUsersRecordData({
   String? strategicBusinessUnit,
   String? corporateServiceUnit,
   bool? testUser,
+  String? qrCodeImageLink,
+  String? qrCodeImageLinkString,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -167,6 +182,8 @@ Map<String, dynamic> createUsersRecordData({
       'strategic_business_unit': strategicBusinessUnit,
       'corporate_service_unit': corporateServiceUnit,
       'test_user': testUser,
+      'qr_code_image_link': qrCodeImageLink,
+      'qr_code_image_link_string': qrCodeImageLinkString,
     }.withoutNulls,
   );
 
@@ -191,7 +208,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.photoUrl == e2?.photoUrl &&
         e1?.strategicBusinessUnit == e2?.strategicBusinessUnit &&
         e1?.corporateServiceUnit == e2?.corporateServiceUnit &&
-        e1?.testUser == e2?.testUser;
+        e1?.testUser == e2?.testUser &&
+        e1?.qrCodeImageLink == e2?.qrCodeImageLink &&
+        e1?.qrCodeImageLinkString == e2?.qrCodeImageLinkString;
   }
 
   @override
@@ -209,7 +228,9 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.photoUrl,
         e?.strategicBusinessUnit,
         e?.corporateServiceUnit,
-        e?.testUser
+        e?.testUser,
+        e?.qrCodeImageLink,
+        e?.qrCodeImageLinkString
       ]);
 
   @override

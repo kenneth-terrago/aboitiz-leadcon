@@ -235,7 +235,7 @@ class _DashboardProfileWidgetState extends State<DashboardProfileWidget> {
                                     ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 16.0, 24.0),
+                                          16.0, 16.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -277,6 +277,27 @@ class _DashboardProfileWidgetState extends State<DashboardProfileWidget> {
                                         ],
                                       ),
                                     ),
+                                    if (dashboardProfileUsersRecord
+                                            .qrCodeImageLinkString !=
+                                        '')
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(2.0),
+                                          child: Image.network(
+                                            valueOrDefault<String>(
+                                              dashboardProfileUsersRecord
+                                                  .qrCodeImageLink,
+                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/lead-con-aboitiz-application-6vjly1/assets/rmelqd7jqgjd/GT2025_Logo_(no_text).png',
+                                            ),
+                                            width: 175.0,
+                                            height: 175.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
                                   ],
                                 ),
                               ),

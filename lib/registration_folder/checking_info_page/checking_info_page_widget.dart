@@ -392,7 +392,6 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   focusNode: _model
                                                       .workEmailTextFieldSMSFocusNode,
                                                   autofocus: false,
-                                                  readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Work email',
@@ -1334,6 +1333,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                       .corporateServiceUnitDropdownSMSValue,
                                                               level: _model
                                                                   .levelDropdownSMSValue,
+                                                              qrCodeImageLink:
+                                                                  userBySMSContainerPreregisteredUsersRecord
+                                                                      ?.qrCodeImageLink,
+                                                              qrCodeImageLinkString:
+                                                                  userBySMSContainerPreregisteredUsersRecord
+                                                                      ?.qrCodeImageLinkString,
                                                             ));
                                                             _model.createdUserBySMS =
                                                                 UsersRecord.getDocumentFromData(
@@ -1371,10 +1376,46 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                               .corporateServiceUnitDropdownSMSValue,
                                                                       level: _model
                                                                           .levelDropdownSMSValue,
+                                                                      qrCodeImageLink:
+                                                                          userBySMSContainerPreregisteredUsersRecord
+                                                                              ?.qrCodeImageLink,
+                                                                      qrCodeImageLinkString:
+                                                                          userBySMSContainerPreregisteredUsersRecord
+                                                                              ?.qrCodeImageLinkString,
                                                                     ),
                                                                     usersRecordReference);
                                                             shouldSetState =
                                                                 true;
+
+                                                            await userBySMSContainerPreregisteredUsersRecord!
+                                                                .reference
+                                                                .update(
+                                                                    createPreregisteredUsersRecordData(
+                                                              businessUnit: _model
+                                                                  .businessUnitDropdownSMSValue,
+                                                              displayName: _model
+                                                                  .fullNameTextFieldSMSController
+                                                                  .text,
+                                                              level: _model
+                                                                  .levelDropdownSMSValue,
+                                                              strategicBusinessUnit:
+                                                                  _model
+                                                                      .strategicBusinessUnitDropdownSMSValue,
+                                                              uid: _model
+                                                                  .createdUserBySMS
+                                                                  ?.uid,
+                                                              positionTitle: _model
+                                                                  .positionTitleTextFieldSMSController
+                                                                  .text,
+                                                              corporateServiceUnit:
+                                                                  _model
+                                                                      .corporateServiceUnitDropdownSMSValue,
+                                                              sbuId: _model
+                                                                  .strategicBusinessUnitDropdownSMSValue,
+                                                              workEmail: _model
+                                                                  .workEmailTextFieldSMSController
+                                                                  .text,
+                                                            ));
                                                             setState(() {
                                                               FFAppState()
                                                                       .isAuthenticated =
@@ -1655,7 +1696,6 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                   focusNode: _model
                                                       .mobileNumberTextFieldEmailFocusNode,
                                                   autofocus: true,
-                                                  readOnly: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Mobile number',
@@ -2564,6 +2604,12 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                       .corporateServiceUnitDropdownEmailValue,
                                                               level: _model
                                                                   .levelDropdownEmailValue,
+                                                              qrCodeImageLink:
+                                                                  userByEmailContainerPreregisteredUsersRecord
+                                                                      ?.qrCodeImageLink,
+                                                              qrCodeImageLinkString:
+                                                                  userByEmailContainerPreregisteredUsersRecord
+                                                                      ?.qrCodeImageLinkString,
                                                             ));
                                                             _model.createdUserByEmail =
                                                                 UsersRecord.getDocumentFromData(
@@ -2601,10 +2647,46 @@ class _CheckingInfoPageWidgetState extends State<CheckingInfoPageWidget> {
                                                                               .corporateServiceUnitDropdownEmailValue,
                                                                       level: _model
                                                                           .levelDropdownEmailValue,
+                                                                      qrCodeImageLink:
+                                                                          userByEmailContainerPreregisteredUsersRecord
+                                                                              ?.qrCodeImageLink,
+                                                                      qrCodeImageLinkString:
+                                                                          userByEmailContainerPreregisteredUsersRecord
+                                                                              ?.qrCodeImageLinkString,
                                                                     ),
                                                                     usersRecordReference);
                                                             shouldSetState =
                                                                 true;
+
+                                                            await userByEmailContainerPreregisteredUsersRecord!
+                                                                .reference
+                                                                .update(
+                                                                    createPreregisteredUsersRecordData(
+                                                              businessUnit: _model
+                                                                  .businessUnitDropdownEmailValue,
+                                                              displayName: _model
+                                                                  .fullNameTextFieldEmailController
+                                                                  .text,
+                                                              level: _model
+                                                                  .levelDropdownEmailValue,
+                                                              phoneNumber: _model
+                                                                  .mobileNumberTextFieldEmailController
+                                                                  .text,
+                                                              strategicBusinessUnit:
+                                                                  _model
+                                                                      .strategicBusinessUnitDropdownEmailValue,
+                                                              uid: _model
+                                                                  .createdUserByEmail
+                                                                  ?.uid,
+                                                              positionTitle: _model
+                                                                  .positionTitleTextFieldEmailController
+                                                                  .text,
+                                                              corporateServiceUnit:
+                                                                  _model
+                                                                      .corporateServiceUnitDropdownEmailValue,
+                                                              sbuId: _model
+                                                                  .strategicBusinessUnitDropdownEmailValue,
+                                                            ));
                                                             setState(() {
                                                               FFAppState()
                                                                       .isAuthenticated =

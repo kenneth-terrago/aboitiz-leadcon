@@ -103,7 +103,7 @@ class _OtpCodePageWidgetState extends State<OtpCodePageWidget> {
               },
             ),
             title: Text(
-              'Verify mobile number',
+              'Verify user OTP',
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Inter',
                     color: FlutterFlowTheme.of(context).primaryText,

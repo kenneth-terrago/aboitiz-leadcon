@@ -309,6 +309,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  var shouldSetState = false;
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
                                     backgroundColor: Colors.transparent,
@@ -345,17 +346,34 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                   ).then((value) => safeSetState(
                                       () => _model.filterItem = value));
 
-                                  setState(() {
-                                    _model.selectedFilterItem =
-                                        _model.filterItem;
-                                    _model.isShowFullList = false;
-                                    _model.isSearch = false;
-                                    _model.isFilter = true;
-                                    _model.isButton = false;
-                                    _model.isField = false;
-                                  });
+                                  shouldSetState = true;
+                                  if (_model.filterItem != null &&
+                                      _model.filterItem != '') {
+                                    setState(() {
+                                      _model.selectedFilterItem =
+                                          _model.filterItem;
+                                      _model.isShowFullList = false;
+                                      _model.isSearch = false;
+                                      _model.isFilter = true;
+                                      _model.isButton = false;
+                                      _model.isField = false;
+                                    });
+                                    if (shouldSetState) setState(() {});
+                                    return;
+                                  } else {
+                                    setState(() {
+                                      _model.selectedFilterItem = '';
+                                      _model.isShowFullList = true;
+                                      _model.isSearch = false;
+                                      _model.isFilter = false;
+                                      _model.isButton = false;
+                                      _model.isField = false;
+                                    });
+                                    if (shouldSetState) setState(() {});
+                                    return;
+                                  }
 
-                                  setState(() {});
+                                  if (shouldSetState) setState(() {});
                                 },
                                 child: Icon(
                                   Icons.filter_alt,
@@ -375,6 +393,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                 hoverColor: Colors.transparent,
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
+                                  var shouldSetState = false;
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
                                     backgroundColor: Colors.transparent,
@@ -411,17 +430,34 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                   ).then((value) => safeSetState(
                                       () => _model.filterItem1 = value));
 
-                                  setState(() {
-                                    _model.selectedFilterItem =
-                                        _model.filterItem1;
-                                    _model.isShowFullList = true;
-                                    _model.isSearch = false;
-                                    _model.isFilter = false;
-                                    _model.isButton = false;
-                                    _model.isField = false;
-                                  });
+                                  shouldSetState = true;
+                                  if (_model.filterItem1 != null &&
+                                      _model.filterItem1 != '') {
+                                    setState(() {
+                                      _model.selectedFilterItem =
+                                          _model.filterItem1;
+                                      _model.isShowFullList = true;
+                                      _model.isSearch = false;
+                                      _model.isFilter = false;
+                                      _model.isButton = false;
+                                      _model.isField = false;
+                                    });
+                                    if (shouldSetState) setState(() {});
+                                    return;
+                                  } else {
+                                    setState(() {
+                                      _model.selectedFilterItem = '';
+                                      _model.isShowFullList = true;
+                                      _model.isSearch = false;
+                                      _model.isFilter = false;
+                                      _model.isButton = false;
+                                      _model.isField = false;
+                                    });
+                                    if (shouldSetState) setState(() {});
+                                    return;
+                                  }
 
-                                  setState(() {});
+                                  if (shouldSetState) setState(() {});
                                 },
                                 child: Icon(
                                   Icons.filter_alt,

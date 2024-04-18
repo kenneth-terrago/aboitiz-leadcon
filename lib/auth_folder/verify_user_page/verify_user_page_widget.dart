@@ -992,7 +992,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   'work_email',
                                                   isEqualTo: _model
                                                       .emailAddressTextfieldController
-                                                      .text,
+                                                      .text
+                                                      .toLowerCase(),
                                                 ),
                                                 singleRecord: true,
                                               ).then((s) => s.firstOrNull);
@@ -1016,7 +1017,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                   ),
                                                   destination: _model
                                                       .emailAddressTextfieldController
-                                                      .text,
+                                                      .text
+                                                      .toLowerCase(),
                                                 );
                                                 shouldSetState = true;
                                                 if (SendEmailOTPCall.status(
@@ -1032,7 +1034,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                           serializeParam(
                                                         _model
                                                             .emailAddressTextfieldController
-                                                            .text,
+                                                            .text
+                                                            .toLowerCase(),
                                                         ParamType.String,
                                                       ),
                                                       'accessToken':
@@ -1118,7 +1121,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     'work_email',
                                                     isEqualTo: _model
                                                         .emailAddressTextfieldController
-                                                        .text,
+                                                        .text
+                                                        .toLowerCase(),
                                                   ),
                                                   singleRecord: true,
                                                 ).then((s) => s.firstOrNull);
@@ -1144,7 +1148,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                     ),
                                                     destination: _model
                                                         .emailAddressTextfieldController
-                                                        .text,
+                                                        .text
+                                                        .toLowerCase(),
                                                   );
                                                   shouldSetState = true;
                                                   if (SendEmailOTPCall.status(
@@ -1160,7 +1165,8 @@ class _VerifyUserPageWidgetState extends State<VerifyUserPageWidget> {
                                                             serializeParam(
                                                           _model
                                                               .emailAddressTextfieldController
-                                                              .text,
+                                                              .text
+                                                              .toLowerCase(),
                                                           ParamType.String,
                                                         ),
                                                         'accessToken':

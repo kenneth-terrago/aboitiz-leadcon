@@ -55,7 +55,7 @@ class _FilterBottomSheetWidgetState extends State<FilterBottomSheetWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              Navigator.pop(context, '');
+              Navigator.pop(context);
             },
             child: Row(
               mainAxisSize: MainAxisSize.max,

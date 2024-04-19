@@ -59,12 +59,9 @@ class VerifyUserPageModel extends FlutterFlowModel<VerifyUserPageWidget> {
       return 'This field is required';
     }
 
-    if (val.length < 10) {
-      return ' Please enter valid phone number';
-    }
-
-    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Please enter valid phone number';
+    if (!RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\$')
+        .hasMatch(val)) {
+      return 'Please enter a valid email address';
     }
     return null;
   }

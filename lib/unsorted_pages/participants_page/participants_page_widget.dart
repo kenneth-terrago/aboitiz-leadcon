@@ -358,6 +358,9 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                       _model.isButton = false;
                                       _model.isField = false;
                                     });
+                                    setState(() {
+                                      _model.searchTextFieldController?.clear();
+                                    });
                                     if (shouldSetState) setState(() {});
                                     return;
                                   } else {
@@ -368,6 +371,9 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                       _model.isFilter = false;
                                       _model.isButton = false;
                                       _model.isField = false;
+                                    });
+                                    setState(() {
+                                      _model.searchTextFieldController?.clear();
                                     });
                                     if (shouldSetState) setState(() {});
                                     return;
@@ -442,6 +448,9 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                       _model.isButton = false;
                                       _model.isField = false;
                                     });
+                                    setState(() {
+                                      _model.searchTextFieldController?.clear();
+                                    });
                                     if (shouldSetState) setState(() {});
                                     return;
                                   } else {
@@ -452,6 +461,9 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                       _model.isFilter = false;
                                       _model.isButton = false;
                                       _model.isField = false;
+                                    });
+                                    setState(() {
+                                      _model.searchTextFieldController?.clear();
                                     });
                                     if (shouldSetState) setState(() {});
                                     return;

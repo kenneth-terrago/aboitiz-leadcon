@@ -362,7 +362,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                     return;
                                   } else {
                                     setState(() {
-                                      _model.selectedFilterItem = '';
+                                      _model.selectedFilterItem = null;
                                       _model.isShowFullList = true;
                                       _model.isSearch = false;
                                       _model.isFilter = false;
@@ -446,7 +446,7 @@ class _ParticipantsPageWidgetState extends State<ParticipantsPageWidget> {
                                     return;
                                   } else {
                                     setState(() {
-                                      _model.selectedFilterItem = '';
+                                      _model.selectedFilterItem = null;
                                       _model.isShowFullList = true;
                                       _model.isSearch = false;
                                       _model.isFilter = false;

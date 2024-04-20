@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MessagesScreen extends StatefulWidget {
   final List messages;
@@ -48,13 +50,22 @@ class _MessagesScreenState extends State<MessagesScreen> {
                         : const Color(0xffe1e0e0),
                   ),
                   constraints: BoxConstraints(maxWidth: w * 2 / 3),
-                  child: Text(
-                    widget.messages[index]['message'].text.text[0],
+                  child: Linkify(
+                    onOpen: (link) async {
+                      if (!await launchUrl(Uri.parse(link.url))) {
+                        throw Exception('Could not launch ${link.url}');
+                      }
+                    },
+                    text: widget.messages[index]['message'].text.text[0],
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       color: widget.messages[index]['isUserMessage']
                           ? Colors.white
                           : Colors.black87,
+                    ),
+                    linkStyle: const TextStyle(
+                      fontWeight: FontWeight.w400,
+                      color: Colors.blue,
                     ),
                   ),
                 ),

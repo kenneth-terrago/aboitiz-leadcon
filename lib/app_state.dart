@@ -18,7 +18,11 @@ class FFAppState extends ChangeNotifier {
   }
 
   Future initializePersistedState() async {
-    secureStorage = const FlutterSecureStorage();
+    secureStorage = const FlutterSecureStorage(
+      aOptions: AndroidOptions(
+          encryptedSharedPreferences: true,
+          storageCipherAlgorithm: StorageCipherAlgorithm.AES_GCM_NoPadding),
+    );
     await _safeInitAsync(() async {
       _isAuthenticated =
           await secureStorage.getBool('ff_isAuthenticated') ?? _isAuthenticated;

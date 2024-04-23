@@ -30,6 +30,7 @@ class _ChatbotPageWidgetState extends State<ChatbotPageWidget> {
 
   // scrolling with animation
   void _scrollDown() {
+    debugPrint('# scroll: ${_scrollController.position.maxScrollExtent}');
     _scrollController.animateTo(
       0.0,
       duration: const Duration(microseconds: 1000),

@@ -1,14 +1,9 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/material.dart';
 import 'event_details_page_model.dart';
-
 export 'event_details_page_model.dart';
 
 class EventDetailsPageWidget extends StatefulWidget {
@@ -208,15 +203,8 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 12.0),
-                                    child: Linkify(
-                                      onOpen: (link) async {
-                                        if (!await launchUrl(
-                                            Uri.parse(link.url))) {
-                                          throw Exception(
-                                              'Could not launch ${link.url}');
-                                        }
-                                      },
-                                      text: valueOrDefault<String>(
+                                    child: SelectableText(
+                                      valueOrDefault<String>(
                                         containerStarterKitRecord?.description,
                                         '[description]',
                                       ),
@@ -228,16 +216,6 @@ class _EventDetailsPageWidgetState extends State<EventDetailsPageWidget> {
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                             lineHeight: 2.0,
-                                          ),
-                                      linkStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            fontSize: 16.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
-                                            lineHeight: 2.0,
-                                            color: Colors.blue,
                                           ),
                                     ),
                                   ),
